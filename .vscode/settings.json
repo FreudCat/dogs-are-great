@@ -1,0 +1,6 @@
+{
+  "prettier.requireConfig": true, 
+  "editor.formatOnSave": true,
+  "prettier.endOfLine": "auto",
+  "prettier.useTabs": true
+}
