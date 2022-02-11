@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import GetCanineAPI from "./GetCanineAPI";
 
 export default class ChooseCanineForm extends Component {
   constructor(props) {
@@ -15,7 +16,7 @@ export default class ChooseCanineForm extends Component {
   handleSubmit(event) {
     console.log(event);
     alert(`You've chosen ${this.state.value}`);
-
+    <GetCanineAPI chosenCanine={this.state.value} />;
     event.prevenDefault();
   }
 

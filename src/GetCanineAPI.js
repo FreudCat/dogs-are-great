@@ -14,7 +14,7 @@ export default class GetCanineAPI extends Component {
         }
       );
       const canine = await res.json();
-      console.log(canineAPI);
+      console.log(canine);
     } catch (err) {
       console.log(err);
     }
