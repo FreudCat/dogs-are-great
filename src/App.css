@@ -2,12 +2,19 @@
 .App-header {
   background-image: url("./images/pattern-bg.png");
   min-height: 40vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-size: 2vw;
   color: white; }
+
+.btn.get-info-button {
+  font-weight: 600; }
+
+* {
+  outline: 1px red solid; }
+
+.border-form {
+  outline: 2px solid black; }
 
 .App {
   text-align: center;

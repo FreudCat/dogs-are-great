@@ -2,5 +2,6 @@
   "prettier.requireConfig": true, 
   "editor.formatOnSave": true,
   "prettier.endOfLine": "auto",
-  "prettier.useTabs": true
+  "prettier.useTabs": true,
+  "prettier.printWidth": 120
 }
