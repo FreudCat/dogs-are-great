@@ -6,8 +6,7 @@ const canineAPI = process.env.REACT_APP_CANINE_API_KEY;
 export default class ChooseCanineForm extends Component {
   constructor(props) {
     super(props);
-    this.state = { value: "Wolfhound", canineInfo: [] };
-
+    this.state = { value: "Wolfhound", canineInfo: [], isSubmitted: false };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -18,6 +17,8 @@ export default class ChooseCanineForm extends Component {
 
   async handleSubmit(event) {
     event.preventDefault();
+    this.setState({ isSubmitted: true });
+
     alert("Your favorite flavor is: " + this.state.value);
     try {
       const res = await fetch(
@@ -35,10 +36,15 @@ export default class ChooseCanineForm extends Component {
         canineInfo: canineInformationFromAPI,
       });
       console.log(this.state.canineInfo);
-      
     } catch (err) {
       console.log(err);
     }
+    this.state.isSubmitted && (
+      <div>
+        <SynonymAPI canineAway={this.state.canineInfo} />
+      </div>
+    );
+    this.setState({ isSubmitted: false });
   }
 
   render() {

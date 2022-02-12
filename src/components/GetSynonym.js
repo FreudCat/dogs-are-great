@@ -2,8 +2,14 @@ import React, { Component } from "react";
 
 export default class SynonymAPI extends Component {
   render() {
-    console.log("im here");
-    return <div>console.log("I am here");</div>;
+    const temperament = this.props.canineAway.map(
+      (canine) => canine.temperament
+    );
+    //   let text = "How are you doing today?";
+    // const myArray = text.split(" ");
+    console.log("temperament[0]");
+
+    return <div>{this.props.canineAway.name}</div>;
   }
 }
 
