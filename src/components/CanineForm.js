@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import SynonymAPI from "./GetSynonym";
+
 const canineAPI = process.env.REACT_APP_CANINE_API_KEY;
 
 export default class ChooseCanineForm extends Component {
@@ -33,6 +35,7 @@ export default class ChooseCanineForm extends Component {
         canineInfo: canineInformationFromAPI,
       });
       console.log(this.state.canineInfo);
+      
     } catch (err) {
       console.log(err);
     }

@@ -36,7 +36,7 @@ export default class Canines extends Component {
         {this.state.canineInfo.map((canine) => (
           <div>{canine.name}</div>
         ))}
-
+      
         {/* <img
           src={`${imagePath}${this.state.canine.reference_image_id}.jpg`}
           alt={`${this.sstate.canine.name}`}
