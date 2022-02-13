@@ -1,59 +1,20 @@
 import React, { Component } from "react";
-import SynonymAPI from "./GetSynonym";
-
-const canineAPI = process.env.REACT_APP_CANINE_API_KEY;
 
 export default class ChooseCanineForm extends Component {
   constructor(props) {
     super(props);
-    this.state = { value: "Wolfhound", canineInfo: [], isSubmitted: false };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(event) {
-    this.setState({ value: event.target.value });
-  }
-
-  async handleSubmit(event) {
-    event.preventDefault();
-    this.setState({ isSubmitted: true });
-
-    alert("Your favorite flavor is: " + this.state.value);
-    try {
-      const res = await fetch(
-        `https://api.thedogapi.com/v1/breeds/search?q=${this.state.value}`,
-        {
-          mode: "cors",
-          headers: {
-            "x-api-key": canineAPI,
-          },
-        }
-      );
-      const canineInformationFromAPI = await res.json(); //This sets the info from the api call into an object
-      this.setState({
-        //this sets the state of the variable canineinfo - see that an empty array was created with "state" up above. It is then used below in the render.
-        canineInfo: canineInformationFromAPI,
-      });
-      console.log(this.state.canineInfo);
-    } catch (err) {
-      console.log(err);
-    }
-    this.state.isSubmitted && (
-      <div>
-        <SynonymAPI canineAway={this.state.canineInfo} />
-      </div>
-    );
-    this.setState({ isSubmitted: false });
+    this.state = { value: "" };
   }
 
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        {/* This onsubmit collects as props the callCanineAPI function */}
+        <form onSubmit={this.props.callCanineAPI}>
           <label className="text-center">
             Select a dog breed to learn more about: <br />
-            <select value={this.state.value} onChange={this.handleChange}>
+            {/* This value is updated when the use selects something new. Then, handleChange function is collected as props and the selectedBreed value is updated in Apps to be used in the API call */}
+            <select value={this.state.value} onChange={this.props.handleChange}>
               <option value="wolfhound">Irish Wolfhound</option>
               <option value="siberian">Husky</option>
               <option value="german_shepherd">German Shepherd</option>
