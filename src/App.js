@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Header from "./components/Header";
 import ChooseCanineForm from "./components/CanineForm";
 import RenderCanines from "./components/RenderCanines";
+import GetSynonym from "./components/GetSynonym";
 const canineAPI = process.env.REACT_APP_CANINE_API_KEY;
 
 class App extends Component {
@@ -24,6 +25,7 @@ class App extends Component {
       const res = await fetch(
         `https://api.thedogapi.com/v1/breeds/search?q=${this.state.selectedBreed}`,
         {
+          method: "GET",
           mode: "cors",
           headers: {
             "x-api-key": canineAPI,
@@ -38,7 +40,6 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.state.canineInfo);
     return (
       <div className="container">
         <Header headerText="Dogs of Skyrim and Fallout" />
@@ -50,6 +51,13 @@ class App extends Component {
         {this.state.canineInfo.length !== 0 &&
           this.state.canineInfo.map((canineInfo) => (
             <RenderCanines key={canineInfo.id} canineInfo={canineInfo} />
+          ))}
+        {this.state.canineInfo.length !== 0 &&
+          this.state.canineInfo.map((canineInfo) => (
+            <GetSynonym
+              key={canineInfo.id}
+              temperamentWords={canineInfo.temperament}
+            />
           ))}
       </div>
     );
