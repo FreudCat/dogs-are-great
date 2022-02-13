@@ -9,12 +9,12 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = { selectedBreed: "wolfhound", canineInfo: [] }; // Setting the selectedBreed to the first option incase the user does not change the option
-    this.handleChange = this.handleChange.bind(this);
+    this.handleChangeInApp = this.handleChangeInApp.bind(this);
   }
 
   // this event is updated based on the Choosecanineform component (see the render)
-  handleChange(event) {
-    this.setState({ selectedBreed: event.target.value });
+  handleChangeInApp(event) {
+    this.setState({ selectedBreed: event });
   }
 
   // This event is called based on a submission in the Choosecanineform component (see the render)
@@ -45,11 +45,12 @@ class App extends Component {
         {/* The functions are sent over to the ChooseCanineForm and where they will be collected as props */}
         <ChooseCanineForm
           callCanineAPI={this.callCanineAPI}
-          handleChange={this.handleChange}
+          handleChangeInApp={this.handleChangeInApp}
         />
-        {this.state.canineInfo.length !== 0 && (
-          <RenderCanines breedInfo={this.state.canineInfo} />
-        )}
+        {this.state.canineInfo.length !== 0 &&
+          this.state.canineInfo.map((canineInfo) => (
+            <RenderCanines key={canineInfo.id} canineInfo={canineInfo} />
+          ))}
       </div>
     );
   }

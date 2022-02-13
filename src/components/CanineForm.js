@@ -4,6 +4,13 @@ export default class ChooseCanineForm extends Component {
   constructor(props) {
     super(props);
     this.state = { value: "" };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({ value: event.target.value }, () => {
+      this.props.handleChangeInApp(this.state.value);
+    });
   }
 
   render() {
@@ -13,8 +20,8 @@ export default class ChooseCanineForm extends Component {
         <form onSubmit={this.props.callCanineAPI}>
           <label className="text-center">
             Select a dog breed to learn more about: <br />
-            {/* This value is updated when the use selects something new. Then, handleChange function is collected as props and the selectedBreed value is updated in Apps to be used in the API call */}
-            <select value={this.state.value} onChange={this.props.handleChange}>
+            {/* This value is updated when the use selects something new. Then, handleChange function is called. The handleChange function then calls two functions. One changes the text in the dropdown menu to the selected value and then the selectedBreed value is updated in Apps via props to be used in the API call */}
+            <select value={this.state.value} onChange={this.handleChange}>
               <option value="wolfhound">Irish Wolfhound</option>
               <option value="siberian">Husky</option>
               <option value="german_shepherd">German Shepherd</option>
