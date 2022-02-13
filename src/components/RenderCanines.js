@@ -8,6 +8,9 @@ export default class RenderCanines extends Component {
       <div>
         <img
           src={`${imagePath}${this.props.canineInfo.reference_image_id}.jpg`}
+          // TODO - make it so the pitbul has the .png extension
+          // TODO - allow random images, too
+          // The pit bull one is .png
           alt={this.props.canineInfo.name}
         />
         <div>{this.props.canineInfo.name}</div>
