@@ -2,6 +2,7 @@ import "./App.css";
 import React, { Component } from "react";
 import Header from "./components/Header";
 import ChooseCanineForm from "./components/CanineForm";
+import RenderCanines from "./components/RenderCanines";
 const canineAPI = process.env.REACT_APP_CANINE_API_KEY;
 
 class App extends Component {
@@ -37,6 +38,7 @@ class App extends Component {
   };
 
   render() {
+    console.log(this.state.canineInfo);
     return (
       <div className="container">
         <Header headerText="Dogs of Skyrim and Fallout" />
@@ -45,6 +47,9 @@ class App extends Component {
           callCanineAPI={this.callCanineAPI}
           handleChange={this.handleChange}
         />
+        {this.state.canineInfo.length !== 0 && (
+          <RenderCanines breedInfo={this.state.canineInfo} />
+        )}
       </div>
     );
   }
