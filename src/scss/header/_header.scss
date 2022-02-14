@@ -1,14 +1,17 @@
-
 .App-header {
   position: relative;
   background-image: url("./images/pattern-bg.png");
-  min-height: 40vh;
+  min-height: 45vh;
   background-size: cover;
   background-repeat: no-repeat;
-  
   h1 {
-    
     font-size: 7vw;
     color: white;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  h1 {
+  font-size: 2vw;
   }
 }

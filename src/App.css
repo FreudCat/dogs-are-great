@@ -2,7 +2,7 @@
 .App-header {
   position: relative;
   background-image: url("./images/pattern-bg.png");
-  min-height: 40vh;
+  min-height: 45vh;
   background-size: cover;
   background-repeat: no-repeat; }
   .App-header h1, .App-header .h1 {
@@ -12,14 +12,21 @@
 .btn.submit-button {
   color: #FFFFFF;
   background-color: #000000;
-  font-weight: 900; }
+  font-weight: 900;
+  border: none;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  margin-bottom: 0.3em; }
 
 .canine-form {
   position: absolute;
-  top: 5em; }
-
-* {
-  outline: 1px red solid; }
+  top: 5em;
+  color: #FFFFFF; }
+  .canine-form .dropdown-form {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px; }
 
 .border-form {
   outline: 2px solid black; }

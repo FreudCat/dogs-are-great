@@ -1,4 +1,11 @@
 .canine-form {
   position: absolute;
   top: 5em;
+  color: #FFFFFF;
+  .dropdown-form {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
 }

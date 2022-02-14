@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button } from "reactstrap";
+import { Button, Form, FormGroup, Label, Input, Row, Col } from "reactstrap";
 
 export default class ChooseCanineForm extends Component {
   constructor(props) {
@@ -16,34 +16,44 @@ export default class ChooseCanineForm extends Component {
 
   render() {
     return (
-      <div className="row">
+      <Row>
         {/* This onsubmit collects as props the callCanineAPI function */}
-        <form
-          className="canine-form col-12 g-0"
+        <Form
+          xs={12}
+          className="canine-form d-inline-flex g-0"
           onSubmit={this.props.callCanineAPI}
         >
-          <label className="text-center">
-            Select a dog breed to learn more about: <br />
-            {/* This value is updated when the use selects something new. Then, handleChange function is called. The handleChange function then calls two functions. One changes the text in the dropdown menu to the selected value and then the selectedBreed value is updated in Apps via props to be used in the API call */}
-            <select value={this.state.value} onChange={this.handleChange}>
-              <option value="wolfhound">Irish Wolfhound</option>
-              <option value="siberian">Husky</option>
-              <option value="german_shepherd">German Shepherd</option>
-              <option value="rottweiler">Rottweiler</option>
-              <option value="pit_bull">Pit Bull</option>
-              <option value="cattle">Cattle Dog</option>
-            </select>
-          </label>
-          <Button
-            style={{ backgroundColor: "#000000" }}
-            className="submit-button"
-            type="submit"
-            value="Submit"
-          >
-            &gt;
-          </Button>
-        </form>
-      </div>
+          <FormGroup>
+            <Label for="canine-dropdown" sm={12} className="text-center">
+              Select a dog breed: <br />
+              {/* This value is updated when the use selects something new. Then, handleChange function is called. The handleChange function then calls two functions. One changes the text in the dropdown menu to the selected value and then the selectedBreed value is updated in Apps via props to be used in the API call */}
+              <Input
+                id="canine-dropdown"
+                type="select"
+                name="select"
+                className="col-6 dropdown-form py-1 "
+                value={this.state.value}
+                onChange={this.handleChange}
+              >
+                <option value="wolfhound">Irish Wolfhound</option>
+                <option value="siberian">Husky</option>
+                <option value="german_shepherd">German Shepherd</option>
+                <option value="rottweiler">Rottweiler</option>
+                <option value="pit_bull">Pit Bull</option>
+                <option value="cattle">Cattle Dog</option>
+              </Input>
+              <Button
+                style={{ backgroundColor: "#000000" }}
+                className="submit-button col-2 g-0 py-1"
+                type="submit"
+                value="Submit"
+              >
+                Go
+              </Button>
+            </Label>
+          </FormGroup>
+        </Form>
+      </Row>
     );
   }
 }

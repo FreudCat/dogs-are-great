@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import ChooseCanineForm from "./components/CanineForm";
 import RenderCanines from "./components/RenderCanines";
 import GetSynonym from "./components/GetSynonym";
+import { Container } from "reactstrap";
 const canineAPI = process.env.REACT_APP_CANINE_API_KEY;
 
 class App extends Component {
@@ -41,7 +42,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
+      <Container className="g-0">
         <Header headerText="Dogs of Skyrim and Fallout" />
         {/* The functions are sent over to the ChooseCanineForm and where they will be collected as props */}
         <ChooseCanineForm
@@ -59,7 +60,7 @@ class App extends Component {
               temperamentWords={canineInfo.temperament}
             />
           ))}
-      </div>
+      </Container>
     );
   }
 }
