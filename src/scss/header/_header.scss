@@ -1,13 +1,14 @@
 
 .App-header {
+  position: relative;
   background-image: url("./images/pattern-bg.png");
   min-height: 40vh;
   background-size: cover;
   background-repeat: no-repeat;
-  font-size: 2vw;
-  color: white;
-}
-
-.btn.get-info-button {
-  font-weight: 600;
+  
+  h1 {
+    
+    font-size: 7vw;
+    color: white;
+  }
 }

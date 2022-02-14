@@ -1,14 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 .App-header {
+  position: relative;
   background-image: url("./images/pattern-bg.png");
   min-height: 40vh;
   background-size: cover;
-  background-repeat: no-repeat;
-  font-size: 2vw;
-  color: white; }
+  background-repeat: no-repeat; }
+  .App-header h1, .App-header .h1 {
+    font-size: 7vw;
+    color: white; }
 
-.btn.get-info-button {
-  font-weight: 600; }
+.btn.submit-button {
+  color: #FFFFFF;
+  background-color: #000000;
+  font-weight: 900; }
+
+.canine-form {
+  position: absolute;
+  top: 5em; }
 
 * {
   outline: 1px red solid; }
@@ -543,7 +551,7 @@ progress {
 
 @media (min-width: 370px) {
   .container, .container-sm {
-    max-width: 370px; } }
+    max-width: 767px; } }
 
 @media (min-width: 768px) {
   .container, .container-sm, .container-md {
@@ -563,7 +571,7 @@ progress {
 
 @media (min-width: 2500px) {
   .container, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl, .container-supersize {
-    max-width: 2500px; } }
+    max-width: 2800px; } }
 
 .row {
   --bs-gutter-x: 1.5rem;
