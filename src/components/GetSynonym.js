@@ -36,7 +36,7 @@ export default class GetSynonym extends Component {
     return (
       <div>
         {this.state.synonymInfo.length !== 0 && (
-          <RenderSynonym synonymInfo={this.state.synonymInfo} />
+          <RenderSynonym synonymArray={this.state.synonymInfo} />
         )}
       </div>
     );
