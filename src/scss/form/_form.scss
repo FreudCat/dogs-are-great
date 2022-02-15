@@ -1,11 +1,51 @@
-.canine-form {
-  position: absolute;
-  top: 5em;
-  color: #FFFFFF;
-  .dropdown-form {
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+@import "./../../../node_modules/bootstrap/scss/functions";
+@import "./../../../node_modules/bootstrap/scss/variables";
+@import "./../../../node_modules/bootstrap/scss/mixins";
+
+.position-relative {
+  position: relative;
+  top: -28vh;
+  .canine-form {
+    position: absolute;
+    color: #ffffff;
+    @include media-breakpoint-up(md) {
+      font-size: 3.5vw;
+    }
+    @media (min-width: 1200px) {
+      font-size: 2vw;
+    }
+    @include media-breakpoint-up(xl) {
+      font-size: 3vw;
+    }
+    .dropdown-form {
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      @include media-breakpoint-up(md) {
+        font-size: 3vw;
+      }
+      @media (min-width: 1200px) {
+        font-size: 1.5vw;
+      }
+      @include media-breakpoint-up(xl) {
+        font-size: 3vw;
+      }
+    }
+  }
+}
+
+.option-size {
+  @include media-breakpoint-up(md) {
+    font-size: 2vw;
+  }
+  @include media-breakpoint-up(lg) {
+    font-size: 1.5vw;
+  }
+  @include media-breakpoint-up(xl) {
+    font-size: 1vw;
+  }
+  @include media-breakpoint-up(supersize) {
+    font-size: 0.5vw;
   }
 }

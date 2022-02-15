@@ -3,7 +3,6 @@
 @import "./../../../node_modules/bootstrap/scss/mixins";
 
 .App-header {
-  position: relative;
   background-image: url("./images/pattern-bg.png");
   min-height: 45vh;
   background-size: cover;
@@ -11,11 +10,14 @@
   h1 {
     font-size: 7vw;
     color: white;
-  }
-}
-
-@include media-breakpoint-up(md) {
-  h1 {
-    font-size: 2vw;
+    @include media-breakpoint-up(md) {
+      font-size: 6vw;
+    }
+    @include media-breakpoint-up(lg) {
+      font-size: 5vw;
+    }
+    @media (min-width: 1200px) {
+      font-size: 4vw;
+    }
   }
 }

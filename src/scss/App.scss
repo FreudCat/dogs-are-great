@@ -3,11 +3,9 @@
 @import "form/button";
 @import "form/form";
 
-
-// * {
-//   outline: 1px red solid;
-// }
-
+* {
+  outline: 1px red solid;
+}
 
 .border-form {
   outline: 2px solid black;
@@ -23,7 +21,6 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
 
 .App-link {
   color: #61dafb;

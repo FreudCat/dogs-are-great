@@ -42,7 +42,7 @@ class App extends Component {
 
   render() {
     return (
-      <Container className="g-0">
+      <Container fluid>
         <Header headerText="Dogs of Skyrim and Fallout" />
         {/* The functions are sent over to the ChooseCanineForm and where they will be collected as props */}
         <ChooseCanineForm
