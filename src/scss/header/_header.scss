@@ -1,3 +1,7 @@
+@import "./../../../node_modules/bootstrap/scss/functions";
+@import "./../../../node_modules/bootstrap/scss/variables";
+@import "./../../../node_modules/bootstrap/scss/mixins";
+
 .App-header {
   position: relative;
   background-image: url("./images/pattern-bg.png");
@@ -12,6 +16,6 @@
 
 @include media-breakpoint-up(md) {
   h1 {
-  font-size: 2vw;
+    font-size: 2vw;
   }
 }

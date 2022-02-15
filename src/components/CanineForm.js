@@ -16,22 +16,29 @@ export default class ChooseCanineForm extends Component {
 
   render() {
     return (
-      <Row>
+      <div>
         {/* This onsubmit collects as props the callCanineAPI function */}
+
         <Form
-          xs={12}
           className="canine-form d-inline-flex g-0"
           onSubmit={this.props.callCanineAPI}
         >
-          <FormGroup>
-            <Label for="canine-dropdown" sm={12} className="text-center">
-              Select a dog breed: <br />
-              {/* This value is updated when the use selects something new. Then, handleChange function is called. The handleChange function then calls two functions. One changes the text in the dropdown menu to the selected value and then the selectedBreed value is updated in Apps via props to be used in the API call */}
+          <FormGroup row>
+            <Col xs={12}>
+              <Label
+                for="canine-dropdown"
+                className="d-flex justify-content-center text-center"
+              >
+                Select a dog breed:
+              </Label>
+            </Col>
+            {/* This value is updated when the use selects something new. Then, handleChange function is called. The handleChange function then calls two functions. One changes the text in the dropdown menu to the selected value and then the selectedBreed value is updated in Apps via props to be used in the API call */}
+            <Col xs={{offset: 1, size: 8}} className="g-0">
               <Input
                 id="canine-dropdown"
                 type="select"
                 name="select"
-                className="col-6 dropdown-form py-1 "
+                className="dropdown-form"
                 value={this.state.value}
                 onChange={this.handleChange}
               >
@@ -42,18 +49,19 @@ export default class ChooseCanineForm extends Component {
                 <option value="pit_bull">Pit Bull</option>
                 <option value="cattle">Cattle Dog</option>
               </Input>
+            </Col>
+            <Col xs={2} className="g-0">
               <Button
-                style={{ backgroundColor: "#000000" }}
-                className="submit-button col-2 g-0 py-1"
+                className="submit-button w-100"
                 type="submit"
                 value="Submit"
               >
                 Go
               </Button>
-            </Label>
+            </Col>
           </FormGroup>
         </Form>
-      </Row>
+      </div>
     );
   }
 }

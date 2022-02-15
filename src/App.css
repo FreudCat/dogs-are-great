@@ -9,14 +9,17 @@
     font-size: 7vw;
     color: white; }
 
+@media (min-width: 768px) {
+  h1, .h1 {
+    font-size: 2vw; } }
+
 .btn.submit-button {
-  color: #FFFFFF;
+  color: #ffffff;
   background-color: #000000;
   font-weight: 900;
-  border: none;
+  border: 1px solid #000000;
   border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
-  margin-bottom: 0.3em; }
+  border-bottom-left-radius: 0px; }
 
 .canine-form {
   position: absolute;
