@@ -80,8 +80,13 @@
   .option-size {
     font-size: 0.5vw; } }
 
-* {
-  outline: 1px red solid; }
+.main-background-image {
+  background-image: url("./images/lab-profile.jpg");
+  background-repeat: no-repeat;
+  background-color: #26211e;
+  background-size: contain;
+  background-position: center;
+  height: 55vh; }
 
 .border-form {
   outline: 2px solid black; }

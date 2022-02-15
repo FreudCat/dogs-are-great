@@ -6,7 +6,7 @@ export default class Header extends Component {
     const { headerText } = this.props; //deconstructuring an object
 
     return (
-      <Row>
+      <Row className="g-0">
         <Col xs={12} className="g-0">
           <header className="App-header pt-4 text-center">
             <h1>{headerText}</h1>

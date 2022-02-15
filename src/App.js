@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import ChooseCanineForm from "./components/CanineForm";
 import RenderCanines from "./components/RenderCanines";
 import GetSynonym from "./components/GetSynonym";
+import InitialBackground from "./components/InitialBackground";
 import { Container } from "reactstrap";
 const canineAPI = process.env.REACT_APP_CANINE_API_KEY;
 
@@ -42,13 +43,15 @@ class App extends Component {
 
   render() {
     return (
-      <Container fluid>
+      <Container fluid className="g-0">
         <Header headerText="Dogs of Skyrim and Fallout" />
         {/* The functions are sent over to the ChooseCanineForm and where they will be collected as props */}
         <ChooseCanineForm
           callCanineAPI={this.callCanineAPI}
           handleChangeInApp={this.handleChangeInApp}
         />
+        {this.state.canineInfo.length === 0 && <InitialBackground />
+          }
         {this.state.canineInfo.length !== 0 &&
           this.state.canineInfo.map((canineInfo) => (
             <RenderCanines key={canineInfo.id} canineInfo={canineInfo} />
