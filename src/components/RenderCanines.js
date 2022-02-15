@@ -18,17 +18,13 @@ export default class RenderCanines extends Component {
 
   render() {
     return (
-      <Row className="d-flex text-center canine-card">
+      <Row className="d-flex g-0 text-center canine-card-row">
         <Col xs={{offset: 1, size: 10}}>
-      <Card>
+      <Card className="canine-card">
         <CardBody>
-     
             <Col xs={12}>
           <CardTitle><h2>{this.props.canineInfo.name}</h2></CardTitle>
           </Col>
- 
-
- 
         <Col xs={12}>
         <div className="dog-image-holder">
           <img className="w-100" onError={this.addErrorSrc}
@@ -48,7 +44,3 @@ export default class RenderCanines extends Component {
     );
   }
 }
-
-{/* <div class="avatar-holder mt-2 mt-md-1 mt-lg-0 me-4 me-md-0 mb-md-3 mb-xxl-0 mt-xxl-1">
-            <img class="avatar w-100" src="../assets/images/image-avatar.png">
-          </div> */}
