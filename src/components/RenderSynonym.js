@@ -18,6 +18,7 @@ export default class RenderSynonym extends Component {
       <div>
         <h3>Synonymous Temperaments</h3>
         {this.synonymArray.map((synonym) => (
+          
           <p>{synonym[0].word}</p>
         ))}
       </div>
