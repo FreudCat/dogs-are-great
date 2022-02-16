@@ -50,8 +50,8 @@ export default class RenderCanines extends Component {
               <Card>
               <button className="cardDropdownHeader w-100 btn btn-outline-primary" onClick={this.toggle} data-event={2}>Height and Weight <i className={`fa fa-chevron-down ${this.state.col === 2 ? "rotate-chevron" : ""}`}></i></button>
                 <Collapse isOpen={this.state.col === 2}>
-                <CardBody>{this.props.canineInfo.height.imperial}
-                {this.props.canineInfo.weight.imperial}</CardBody>
+                <CardBody>Height: {this.props.canineInfo.height.imperial} inches <br/>
+                Weight: {this.props.canineInfo.weight.imperial} pounds</CardBody>
                 </Collapse>
               </Card>
               <Card>
