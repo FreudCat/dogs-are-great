@@ -19,9 +19,9 @@
 
 .btn.submit-button {
   color: #ffffff;
-  background-color: #000000;
-  font-weight: 900;
-  border: 1px solid #000000;
+  background-color: #26211e;
+  font-weight: 600;
+  border: 1px solid #26211e;
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px; }
   @media (min-width: 1024px) {
@@ -107,6 +107,12 @@
 
 .rotate-chevron {
   transform: rotate(180deg); }
+
+.right-arrow {
+  position: relative;
+  z-index: 100;
+  background-color: red;
+  border: 1px solid red; }
 
 .border-form {
   outline: 2px solid black; }

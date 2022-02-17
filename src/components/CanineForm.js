@@ -50,11 +50,11 @@ export default class ChooseCanineForm extends Component {
         
         <Col xs={2} md={2} xl={1}className="d-inline-flex g-0">
               <Button
-                className="submit-button w-100"
+                className="submit-button w-100 p-0"
                 type="submit"
                 value="Submit"
               >
-                Go
+                Fetch!
               </Button>
               </Col>
               </Row>

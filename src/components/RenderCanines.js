@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { Row, Col, Card, CardBody, CardTitle, CardHeader, CardText, Accordion, AccordionItem, AccordionHeader, AccordionBody, UncontrolledCollapse, Collapse } from "reactstrap";
+import CanineCarousel from "./Carousel";
+import errorImage from "./../images/errImage.jpg"
+const canineAPI = process.env.REACT_APP_CANINE_API_KEY;
 
 
 const imagePath = "https://cdn2.thedogapi.com/images/";
@@ -7,12 +10,15 @@ const imagePath = "https://cdn2.thedogapi.com/images/";
 export default class RenderCanines extends Component {
   constructor(props) {
     super(props);
-    this.state = { synonymInfo: [], col: 0 }
+    this.state = { synonymInfo: [], col: 0,  tempImage: "",
+    canineImage: "" }
     this.tempArray = [];
     this.canineImageID = this.props.canineInfo.reference_image_id;
     this.addErrorSrc = this.addErrorSrc.bind(this);
     this.toggle = this.toggle.bind(this);
   }
+
+
 
   toggle = (e) => {
     let event = e.target.dataset.event;
@@ -21,8 +27,13 @@ export default class RenderCanines extends Component {
     });
   }
   addErrorSrc(event){
-    event.target.src =`${imagePath}${this.props.canineInfo.reference_image_id}.png`
+    event.target.src =`${imagePath}${this.canineImageID}.png`
   }
+
+  
+  // componentDidMount = () => {
+  //   this.setState({canineImage: `${imagePath}${this.canineImageID}.jpg` ? `${imagePath}${this.canineImageID}.jpg` : `${imagePath}${this.canineImageID}.png` }) 
+  // }
 
   render() {
     return(
@@ -34,11 +45,14 @@ export default class RenderCanines extends Component {
               <CardTitle><h2>{this.props.canineInfo.name}</h2></CardTitle>
             </Col>
             <Col xs={12} className="mb-3">
-              <div className="dog-image-holder">
+              {/* <div className="dog-image-holder">
                 <img className="w-100" onError={this.addErrorSrc}
-                src={`${imagePath}${this.canineImageID}.jpg`}
-                alt={this.props.canineInfo.name}/>
-              </div>
+                src={this.state.canineImage}
+                alt={this.props.canineInfo.name}/> */}
+                
+              {/* </div> */}
+              <CanineCarousel canineName={this.props.canineInfo.name} canineImageID={this.canineImageID}/>
+
             </Col>
             <Col>
               <Card>
