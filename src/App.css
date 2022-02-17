@@ -219,6 +219,14 @@ body.modal-open {
   .modal-body {
     font-size: 3em; } }
 
+@media (min-width: 1400px) {
+  .modal-footer {
+    font-size: 2em; } }
+
+@media (min-width: 2500px) {
+  .modal-footer {
+    font-size: 2.5em; } }
+
 .footer-row {
   background-image: url("./images/pattern-bg.png");
   background-size: cover;

@@ -19,14 +19,11 @@ class App extends Component {
 
   // this event is updated based on the Choosecanineform component (see the render)
   handleChangeInApp(event) {
-    console.log(event);
     this.setState({ selectedBreed: event });
   }
 
   // This event is called based on a submission in the Choosecanineform component (see the render)
   callCanineAPI = async (event) => {
-    console.log("API was called");
-    console.log(this.state.selectedBreed);
     event.preventDefault();
     try {
       const res = await fetch(
@@ -41,7 +38,6 @@ class App extends Component {
       );
       const canineInformationFromAPI = await res.json(); //This sets the info from the api call into an object
       this.setState({ canineInfo: canineInformationFromAPI });
-      console.log(this.state.canineInfo);
     } catch (err) {
       console.log(err);
     }

@@ -56,10 +56,8 @@ export const GetRandomImage = (props) => {
     } else {
       reformedArray.push(tempNameArray[0]);
     }
-    console.log(reformedArray);
     try {
       reformedArray.map(async (reformedName) => {
-        console.log(reformedName);
         const res = await fetch(
           `https://dog.ceo/api/breed/${reformedName}/images/random`
         );

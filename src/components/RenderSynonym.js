@@ -32,7 +32,7 @@ export const RenderSynonym = (props) => {
           Get Synonymous Temperaments
         </Button>
       </Col>
-      <Modal isOpen={modal} toggle={toggle}>
+      <Modal size="lg" isOpen={modal} toggle={toggle}>
         <ModalHeader toggle={toggle}>Synonyms</ModalHeader>
         <ModalBody>
           {synonymArray.map((synonym) => (

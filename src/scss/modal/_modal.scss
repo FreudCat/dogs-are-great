@@ -28,3 +28,12 @@ body.modal-open {
     font-size: 3em;
   }
 }
+
+.modal-footer {
+  @include media-breakpoint-up(xl) {
+    font-size: 2em;
+  }
+  @include media-breakpoint-up(supersize) {
+    font-size: 2.5em;
+  }
+}

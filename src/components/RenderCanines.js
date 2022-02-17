@@ -19,7 +19,6 @@ export const RenderCanines = (props) => {
     setCollapseID(collapseID === Number(event) ? 0 : Number(event));
   };
 
-  console.log(weight);
   return (
     <Row className="d-flex g-0 canine-card-row text-center">
       <Col xs={{ offset: 1, size: 10 }} lg={{offset: 2, size: 8}}>
