@@ -22,7 +22,7 @@ export const RenderCanines = (props) => {
   console.log(weight);
   return (
     <Row className="d-flex g-0 canine-card-row text-center">
-      <Col xs={{ offset: 1, size: 10 }}>
+      <Col xs={{ offset: 1, size: 10 }} lg={{offset: 2, size: 8}}>
         <Card className="canine-card">
           <CardBody>
             <Col xs={12}>
@@ -37,30 +37,33 @@ export const RenderCanines = (props) => {
               />
             </Col>
             <Col>
-              <Card>
-                <button
-                  className="cardDropdownHeader w-100 btn btn-outline-primary"
-                  onClick={toggle}
-                  data-event={1}
-                >
-                  Historical Job{" "}
-                  <i
-                    className={`fa fa-chevron-down ${
-                      collapseID === 1 ? "rotate-chevron" : ""
-                    }`}
-                  ></i>
-                </button>
-                <Collapse isOpen={collapseID === 1}>
-                  <CardBody>{bred_for}</CardBody>
-                </Collapse>
-              </Card>
+              <Col md={{ offset: 2, size: 8 }} className="mt-md-5 mb-md-2">
+                <Card>
+                  <button
+                    className="cardDropdownHeader w-100 btn btn-outline-primary"
+                    onClick={toggle}
+                    data-event={1}
+                  >
+                    Historical Job
+                    <i
+                      className={`fa fa-chevron-down ${
+                        collapseID === 1 ? "rotate-chevron" : ""
+                      }`}
+                    ></i>
+                  </button>
+                  <Collapse isOpen={collapseID === 1}>
+                    <CardBody>{bred_for}</CardBody>
+                  </Collapse>
+                </Card>
+              </Col>
+              <Col md={{ offset: 2, size: 8 }} className="mb-md-2">
               <Card>
                 <button
                   className="cardDropdownHeader w-100 btn btn-outline-primary"
                   onClick={toggle}
                   data-event={2}
                 >
-                  Height and Weight{" "}
+                  Height and Weight
                   <i
                     className={`fa fa-chevron-down ${
                       collapseID === 2 ? "rotate-chevron" : ""
@@ -74,13 +77,15 @@ export const RenderCanines = (props) => {
                   </CardBody>
                 </Collapse>
               </Card>
+              </Col>
+              <Col md={{ offset: 2, size: 8 }} className="mb-md-2">
               <Card>
                 <button
                   className="cardDropdownHeader w-100 btn btn-outline-primary"
                   onClick={toggle}
                   data-event={3}
                 >
-                  Life Span{" "}
+                  Life Span
                   <i
                     className={`fa fa-chevron-down ${
                       collapseID === 3 ? "rotate-chevron" : ""
@@ -91,6 +96,8 @@ export const RenderCanines = (props) => {
                   <CardBody>{life_span}</CardBody>
                 </Collapse>
               </Card>
+              </Col>
+              <Col md={{ offset: 2, size: 8 }} className="mb-md-5">
               <Card>
                 <button
                   className="cardDropdownHeader w-100 btn btn-outline-primary"
@@ -108,6 +115,7 @@ export const RenderCanines = (props) => {
                   <CardBody>{temperament}</CardBody>
                 </Collapse>
               </Card>
+              </Col>
             </Col>
           </CardBody>
         </Card>

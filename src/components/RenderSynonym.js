@@ -20,8 +20,16 @@ export const RenderSynonym = (props) => {
 
   return (
     <Row className="g-0">
-      <Col xs={{ offset: 2, size: 8 }} className="mb-5">
-        <Button color="primary" className="w-100" onClick={toggle}>
+      <Col
+        xs={{ offset: 2, size: 8 }}
+        md={{ offset: 4, size: 4 }}
+        className="mb-5"
+      >
+        <Button
+          color="primary"
+          className="w-100 get-synonym-button"
+          onClick={toggle}
+        >
           Get Synonymous Temperaments
         </Button>
       </Col>

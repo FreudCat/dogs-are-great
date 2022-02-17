@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button } from "reactstrap";
+import { Button, Col } from "reactstrap";
 import errorImage from "./../images/errImage.jpg";
 
 export const GetRandomImage = (props) => {
@@ -84,9 +84,15 @@ export const GetRandomImage = (props) => {
   return (
     <div>
       <img className="w-100 mb-2" src={canineImage} alt={altMessage} />
-      <Button className="w-75" color="primary" onClick={getRandomImage}>
-        Get another {canineName} image{" "}
-      </Button>
+      <Col md={{ offset: 2, size: 8 }}>
+        <Button
+          className="w-75 get-random-button"
+          color="primary"
+          onClick={getRandomImage}
+        >
+          Get another {canineName} image{" "}
+        </Button>
+      </Col>
     </div>
   );
 };

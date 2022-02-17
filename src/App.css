@@ -34,6 +34,22 @@
     .btn.submit-button {
       font-size: 3vw; } }
 
+@media (min-width: 768px) {
+  .btn.get-random-button {
+    font-size: 2.5vw; } }
+
+@media (min-width: 1200px) {
+  .btn.get-random-button {
+    font-size: 1.5vw; } }
+
+@media (min-width: 768px) {
+  .btn.get-synonym-button {
+    font-size: 2.5vw; } }
+
+@media (min-width: 1200px) {
+  .btn.get-synonym-button {
+    font-size: 1.5vw; } }
+
 .position-relative {
   position: relative;
   top: -28vh; }
@@ -91,6 +107,9 @@
 .canine-card-row {
   position: relative;
   top: -3em; }
+  @media (min-width: 1024px) {
+    .canine-card-row {
+      top: -8em; } }
   .canine-card-row .canine-card {
     border: none;
     border-radius: 10px;
@@ -99,6 +118,9 @@
 .btn.cardDropdownHeader {
   position: relative;
   font-weight: 600; }
+  @media (min-width: 768px) {
+    .btn.cardDropdownHeader {
+      font-size: 2.5vw; } }
 
 .fa-chevron-down {
   position: absolute;
@@ -107,12 +129,6 @@
 
 .rotate-chevron {
   transform: rotate(180deg); }
-
-.right-arrow {
-  position: relative;
-  z-index: 100;
-  background-color: red;
-  border: 1px solid red; }
 
 .border-form {
   outline: 2px solid black; }
