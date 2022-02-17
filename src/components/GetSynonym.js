@@ -10,7 +10,6 @@ export default class GetSynonym extends Component {
   }
 
   componentDidMount = async () => {
-    console.log("I'm from the callSynonymAPI");
     for (let word of this.wordArray) {
       try {
         const res = await fetch(

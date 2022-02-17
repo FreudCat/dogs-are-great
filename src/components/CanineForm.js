@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Form, FormGroup, Label, Input, Row, Col } from "reactstrap";
+import { Button, Form, Label, Input, Row, Col } from "reactstrap";
 
 export default class ChooseCanineForm extends Component {
   constructor(props) {
@@ -23,10 +23,10 @@ export default class ChooseCanineForm extends Component {
         >
           {/* This onsubmit collects as props the callCanineAPI function */}
           <Row className="g-0">
-          <Col xs={12} lg={{offset: 1, size: 4}} xl={{offset: 1, size: 4}}className="offset-lgxl-0">
-            <Label for="canine-dropdown" className="text-center d-flex justify-content-center justify-content-lgxl-end mb-md-0">
+            <Col xs={12} lg={{offset: 1, size: 4}} xl={{offset: 1, size: 4}}className="offset-lgxl-0">
+              <Label for="canine-dropdown" className="text-center d-flex justify-content-center justify-content-lgxl-end mb-md-0">
               Select a dog breed: &nbsp;
-            </Label>
+              </Label>
             </Col>
           
             {/* This value is updated when the use selects something new. Then, handleChange function is called. The handleChange function then calls two functions. One changes the text in the dropdown menu to the selected value and then the selectedBreed value is updated in Apps via props to be used in the API call */}
@@ -46,9 +46,9 @@ export default class ChooseCanineForm extends Component {
                 <option className="option-size" value="pit_bull">Pit Bull</option>
                 <option className="option-size" value="cattle">Cattle Dog</option>
               </Input>
-              </Col>
+            </Col>
         
-        <Col xs={2} md={2} xl={1}className="d-inline-flex g-0">
+            <Col xs={2} md={2} xl={1}className="d-inline-flex g-0">
               <Button
                 className="submit-button w-100 p-0"
                 type="submit"
@@ -56,13 +56,13 @@ export default class ChooseCanineForm extends Component {
               >
                 Fetch!
               </Button>
-              </Col>
-              </Row>
+            </Col>
+          </Row>
         </Form>
-        </Row>
+      </Row>
     );
   }
-}
+} 
 {
   /* <button type="submit" value="Submit" className="btn btn-warning"></button>
 

@@ -7,9 +7,10 @@ export default class RenderSynonym extends Component {
     this.state = {
       modal: false
     };
-    this.synonymArray = this.props.synonymArray;
+    // this.synonymArray = this.props.synonymArray;
     this.toggle = this.toggle.bind(this);
   }
+
   toggle() {
     this.setState({
       modal: !this.state.modal
@@ -17,7 +18,6 @@ export default class RenderSynonym extends Component {
   }
 
   render() {
-    console.log(this.synonymArray);
     return (
       <Row className="g-0">
         <Col xs={{offset: 2, size: 8}} className="mb-5">
@@ -26,7 +26,7 @@ export default class RenderSynonym extends Component {
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
           <ModalHeader toggle={this.toggle}>Synonyms</ModalHeader>
           <ModalBody>
-          {this.synonymArray.map((synonym) => (
+          {this.props.synonymArray.map((synonym) => (
           <p>{synonym[0].word}</p>
         ))}
           </ModalBody>
