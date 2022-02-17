@@ -10,7 +10,6 @@ import {
 } from "reactstrap";
 
 export const RenderSynonym = (props) => {
-  console.log("rendersynonym ran");
   const [modal, setModal] = useState(false);
   const { synonymArray } = props;
 

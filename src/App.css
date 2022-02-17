@@ -68,6 +68,18 @@
   .btn.get-synonym-button {
     font-size: 3vw; } }
 
+.btn.abstract-modal-button {
+  color: #ffffff;
+  background-color: #26211e;
+  font-weight: 600;
+  border: none; }
+  @media (min-width: 1024px) {
+    .btn.abstract-modal-button {
+      font-size: 3vw; } }
+  @media (min-width: 1200px) {
+    .btn.abstract-modal-button {
+      font-size: 1.5vw; } }
+
 .position-relative {
   position: relative;
   top: -28vh; }
@@ -179,6 +191,38 @@
 
 .preloader {
   opacity: 0.5; }
+
+body.modal-open {
+  padding-right: 0 !important; }
+
+@media (min-width: 1400px) {
+  .modal-header {
+    font-size: 2em; } }
+
+@media (min-width: 2500px) {
+  .modal-header {
+    font-size: 3em; } }
+
+@media (min-width: 1400px) {
+  .modal-title {
+    font-size: 1.5em; } }
+
+@media (min-width: 2500px) {
+  .modal-title {
+    font-size: 2em; } }
+
+@media (min-width: 1400px) {
+  .modal-body {
+    font-size: 2em; } }
+
+@media (min-width: 2500px) {
+  .modal-body {
+    font-size: 3em; } }
+
+.footer-row {
+  background-image: url("./images/pattern-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat; }
 
 .border-form {
   outline: 2px solid black; }

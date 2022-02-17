@@ -1,0 +1,30 @@
+body.modal-open {
+  padding-right: 0 !important;
+}
+
+.modal-header {
+  @include media-breakpoint-up(xl) {
+    font-size: 2em;
+  }
+  @include media-breakpoint-up(supersize) {
+    font-size: 3em;
+  }
+}
+
+.modal-title {
+  @include media-breakpoint-up(xl) {
+    font-size: 1.5em;
+  }
+  @include media-breakpoint-up(supersize) {
+    font-size: 2em;
+  }
+}
+
+.modal-body {
+  @include media-breakpoint-up(xl) {
+    font-size: 2em;
+  }
+  @include media-breakpoint-up(supersize) {
+    font-size: 3em;
+  }
+}

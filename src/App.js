@@ -5,6 +5,7 @@ import { CanineForm } from "./components/CanineForm";
 import { RenderCanines } from "./components/RenderCanines";
 import { GetSynonym } from "./components/GetSynonym";
 import { InitialBackground } from "./components/InitialBackground";
+import { Footer } from "./components/Footer";
 import "./App.css";
 
 const canineAPI = process.env.REACT_APP_CANINE_API_KEY;
@@ -67,6 +68,7 @@ class App extends Component {
               temperamentWords={canineInfo.temperament}
             />
           ))}
+          <Footer />
       </Container>
     );
   }
