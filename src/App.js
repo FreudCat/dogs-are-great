@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { Container } from "reactstrap";
 import { Header } from "./components/Header";
 import { CanineForm } from "./components/CanineForm";
-import RenderCanines from "./components/RenderCanines";
-import GetSynonym from "./components/GetSynonym";
+import { RenderCanines } from "./components/RenderCanines";
+import { GetSynonym } from "./components/GetSynonym";
 import InitialBackground from "./components/InitialBackground";
 import "./App.css";
 
@@ -12,7 +12,7 @@ const canineAPI = process.env.REACT_APP_CANINE_API_KEY;
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { selectedBreed: "", canineInfo: [] }; 
+    this.state = { selectedBreed: "", canineInfo: [] };
     this.handleChangeInApp = this.handleChangeInApp.bind(this);
   }
 

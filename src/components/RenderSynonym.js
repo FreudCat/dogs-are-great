@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import {
   Button,
   Modal,
@@ -9,41 +9,33 @@ import {
   Col,
 } from "reactstrap";
 
-export default class RenderSynonym extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      modal: false,
-    };
-    this.toggle = this.toggle.bind(this);
-  }
+export const RenderSynonym = (props) => {
+  console.log("rendersynonym ran");
+  const [modal, setModal] = useState(false);
+  const { synonymArray } = props;
 
-  toggle() {
-    this.setState({
-      modal: !this.state.modal,
-    });
-  }
+  const toggle = () => {
+    setModal(!modal);
+  };
 
-  render() {
-    return (
-      <Row className="g-0">
-        <Col xs={{ offset: 2, size: 8 }} className="mb-5">
-          <Button color="primary" className="w-100" onClick={this.toggle}>
-            Get Synonymous Temperaments
-          </Button>
-        </Col>
-        <Modal isOpen={this.state.modal} toggle={this.toggle}>
-          <ModalHeader toggle={this.toggle}>Synonyms</ModalHeader>
-          <ModalBody>
-            {this.props.synonymArray.map((synonym) => (
-              <p>{synonym[0].word}</p>
-            ))}
-          </ModalBody>
-          <ModalFooter>
-            <p>Pretty great dog!</p>
-          </ModalFooter>
-        </Modal>
-      </Row>
-    );
-  }
-}
+  return (
+    <Row className="g-0">
+      <Col xs={{ offset: 2, size: 8 }} className="mb-5">
+        <Button color="primary" className="w-100" onClick={toggle}>
+          Get Synonymous Temperaments
+        </Button>
+      </Col>
+      <Modal isOpen={modal} toggle={toggle}>
+        <ModalHeader toggle={toggle}>Synonyms</ModalHeader>
+        <ModalBody>
+          {synonymArray.map((synonym) => (
+            <p key={synonymArray.indexOf(synonym)}>{synonym}</p>
+          ))}
+        </ModalBody>
+        <ModalFooter>
+          <p>Pretty great dog!</p>
+        </ModalFooter>
+      </Modal>
+    </Row>
+  );
+};

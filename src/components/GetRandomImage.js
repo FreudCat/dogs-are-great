@@ -1,24 +1,24 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "reactstrap";
 import errorImage from "./../images/errImage.jpg";
-const canineAPI = process.env.REACT_APP_CANINE_API_KEY;
 
-export default class GetRandomImage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      tempImage: "",
-      canineImage: "",
-      altMessage: "",
-    };
-    this.tempNameArray = this.props.canineName.toLowerCase().split(" ");
-    this.getRandomImage = this.getRandomImage.bind(this);
-  }
+export const GetRandomImage = (props) => {
+  const [tempImage, setTempImage] = useState("");
+  const [canineImage, setCanineImage] = useState("");
+  const [altMessage, setAltMessage] = useState("");
+  const canineAPI = process.env.REACT_APP_CANINE_API_KEY;
+  const { canineName, canineImageID } = props;
+  const tempNameArray = canineName.toLowerCase().split(" ");
 
-  componentDidMount = async () => {
+  // This useEffect acts like the componentDidMount. Need to add another function inside to utilize async/await. Then call the function below. Added the empty dependency array at the very end so that the useEffect is only called once during the first render, and no everytime this page is re-rendered with the "get random image" button
+  useEffect(() => {
+    fetchInitialImage();
+  }, []);
+
+  const fetchInitialImage = async () => {
     try {
       const res = await fetch(
-        `https://api.thedogapi.com/v1/images/${this.props.canineImageID}`,
+        `https://api.thedogapi.com/v1/images/${canineImageID}`,
         {
           method: "GET",
           headers: {
@@ -27,55 +27,49 @@ export default class GetRandomImage extends Component {
         }
       );
       const canineImageSrc = await res.json();
-      this.setState({
-        canineImage: canineImageSrc.url
-          ? `${canineImageSrc.url}`
-          : `${errorImage}`,
-      });
-      this.setState({
-        altMessage: canineImageSrc.url
-          ? this.props.canineName
-          : "Image not found",
-      });
+      setCanineImage(
+        canineImageSrc.url ? `${canineImageSrc.url}` : `${errorImage}`
+      );
+      setAltMessage(
+        canineImageSrc.url
+          ? canineName
+          : "Requested image not found. Placeholder image of smiling sheltie."
+      );
     } catch (err) {
       console.log(err);
     }
   };
 
-  getRandomImage = () => {
+  const getRandomImage = () => {
     let reformedArray = [];
-    if (this.tempNameArray.length > 1) {
-      reformedArray.push("hello");
-      reformedArray.push(`${this.tempNameArray[1]}/${this.tempNameArray[0]}`);
-      reformedArray.push(`${this.tempNameArray[2]}/${this.tempNameArray[1]}`);
-      reformedArray.push(`${this.tempNameArray[1]}${this.tempNameArray[2]}`);
-      reformedArray.push(`${this.tempNameArray[0]}${this.tempNameArray[1]}`);
+    if (tempNameArray.length > 1) {
+      reformedArray.push(`${tempNameArray[1]}/${tempNameArray[0]}`);
+      reformedArray.push(`${tempNameArray[2]}/${tempNameArray[1]}`);
+      reformedArray.push(`${tempNameArray[1]}${tempNameArray[2]}`);
+      reformedArray.push(`${tempNameArray[0]}${tempNameArray[1]}`);
       reformedArray.push(
-        `${this.tempNameArray[1]}${this.tempNameArray[2]}/${this.tempNameArray[0]}`
+        `${tempNameArray[1]}${tempNameArray[2]}/${tempNameArray[0]}`
       );
-      reformedArray.push(`${this.tempNameArray[1]}`);
+      reformedArray.push(`${tempNameArray[1]}`);
     } else {
-      reformedArray.push(this.tempNameArray[0]);
+      reformedArray.push(tempNameArray[0]);
     }
+    console.log(reformedArray);
     try {
       reformedArray.map(async (reformedName) => {
+        console.log(reformedName);
         const res = await fetch(
           `https://dog.ceo/api/breed/${reformedName}/images/random`
         );
         const images = await res.json(); //This sets the info from the api call into an object
         if (images.status === "success") {
-          this.setState({ tempImage: images.message });
+          setTempImage(images.message);
         }
-        this.setState({
-          canineImage: this.state.tempImage
-            ? this.state.tempImage
-            : `${errorImage}`,
-        });
-        this.setState({
-          altMessage: this.state.tempImage
-            ? this.props.canineName
-            : "Image not found.",
-        });
+        setAltMessage(
+          tempImage
+            ? canineName
+            : "Requested image not found. Placeholder image of smiling sheltie."
+        );
       });
     } catch (err) {
       console.log(err);
@@ -83,18 +77,16 @@ export default class GetRandomImage extends Component {
     reformedArray = [];
   };
 
-  render() {
-    return (
-      <div>
-        <img
-          className="w-100 mb-2"
-          src={this.state.canineImage}
-          alt={this.props.canineName}
-        />
-        <Button className="w-75" color="primary" onClick={this.getRandomImage}>
-          Get another {this.props.canineName} image{" "}
-        </Button>
-      </div>
-    );
-  }
-}
+  useEffect(() => {
+    setCanineImage(tempImage ? tempImage : `${errorImage}`);
+  }, [tempImage]);
+
+  return (
+    <div>
+      <img className="w-100 mb-2" src={canineImage} alt={altMessage} />
+      <Button className="w-75" color="primary" onClick={getRandomImage}>
+        Get another {canineName} image{" "}
+      </Button>
+    </div>
+  );
+};

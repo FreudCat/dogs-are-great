@@ -1,16 +1,16 @@
-import React, { Component } from "react";
-import RenderSynonym from "./RenderSynonym";
+import React, { useState, useEffect } from "react";
+import { RenderSynonym } from "./RenderSynonym";
 
-export default class GetSynonym extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { synonymInfo: [] };
-    this.tempArray = [];
-    this.wordArray = this.props.temperamentWords.split(", ");
-  }
+export const GetSynonym = (props) => {
+  const [synonymInfo, setSynonymInfo] = useState([]);
+  const wordArray = props.temperamentWords.split(", ");
 
-  componentDidMount = async () => {
-    for (let word of this.wordArray) {
+  useEffect(() => {
+    getSynonyms();
+  }, []);
+
+  const getSynonyms = () => {
+    wordArray.map(async (word) => {
       try {
         const res = await fetch(
           `https://api.datamuse.com/words?ml=${word.replaceAll("-", "")}&max=1`,
@@ -23,21 +23,22 @@ export default class GetSynonym extends Component {
           }
         );
         const wordInformationFromAPI = await res.json(); //This sets the info from the api call into an object
-        this.tempArray.push(wordInformationFromAPI);
+        setSynonymInfo((synonymInfo) => [
+          ...synonymInfo,
+          wordInformationFromAPI[0].word,
+        ]);
       } catch (err) {
         console.log(err);
       }
-    }
-    this.setState({ synonymInfo: this.tempArray });
+    });
+    // setSynonymInfo((synonymInfo) => [...synonymInfo, tempArray]);
   };
 
-  render() {
-    return (
-      <div>
-        {this.state.synonymInfo.length !== 0 && (
-          <RenderSynonym synonymArray={this.state.synonymInfo} />
-        )}
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      {synonymInfo.length === wordArray.length && (
+        <RenderSynonym synonymArray={synonymInfo} />
+      )}
+    </div>
+  );
+};
