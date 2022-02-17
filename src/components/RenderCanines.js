@@ -27,7 +27,7 @@ export const RenderCanines = (props) => {
           <CardBody>
             <Col xs={12}>
               <CardTitle>
-                <h2>{name}</h2>
+                <h2 className="canine-card-name">{name}</h2>
               </CardTitle>
             </Col>
             <Col xs={12} className="mb-3">
@@ -52,7 +52,7 @@ export const RenderCanines = (props) => {
                     ></i>
                   </button>
                   <Collapse isOpen={collapseID === 1}>
-                    <CardBody>{bred_for}</CardBody>
+                    <CardBody className="card-text">{bred_for}</CardBody>
                   </Collapse>
                 </Card>
               </Col>
@@ -71,7 +71,7 @@ export const RenderCanines = (props) => {
                   ></i>
                 </button>
                 <Collapse isOpen={collapseID === 2}>
-                  <CardBody>
+                  <CardBody className="card-text">
                     Height: {height.imperial} inches <br />
                     Weight: {weight.imperial} pounds
                   </CardBody>
@@ -93,7 +93,7 @@ export const RenderCanines = (props) => {
                   ></i>
                 </button>
                 <Collapse isOpen={collapseID === 3}>
-                  <CardBody>{life_span}</CardBody>
+                  <CardBody className="card-text">{life_span}</CardBody>
                 </Collapse>
               </Card>
               </Col>
@@ -112,7 +112,7 @@ export const RenderCanines = (props) => {
                   ></i>
                 </button>
                 <Collapse isOpen={collapseID === 4}>
-                  <CardBody>{temperament}</CardBody>
+                  <CardBody className="card-text">{temperament}</CardBody>
                 </Collapse>
               </Card>
               </Col>

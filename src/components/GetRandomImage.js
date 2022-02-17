@@ -6,6 +6,7 @@ export const GetRandomImage = (props) => {
   const [tempImage, setTempImage] = useState("");
   const [canineImage, setCanineImage] = useState("");
   const [altMessage, setAltMessage] = useState("");
+  const [loading, setLoading] = useState(true);
   const canineAPI = process.env.REACT_APP_CANINE_API_KEY;
   const { canineName, canineImageID } = props;
   const tempNameArray = canineName.toLowerCase().split(" ");
@@ -41,6 +42,7 @@ export const GetRandomImage = (props) => {
   };
 
   const getRandomImage = () => {
+    setLoading(true);
     let reformedArray = [];
     if (tempNameArray.length > 1) {
       reformedArray.push(`${tempNameArray[1]}/${tempNameArray[0]}`);
@@ -83,7 +85,9 @@ export const GetRandomImage = (props) => {
 
   return (
     <div>
-      <img className="w-100 mb-2" src={canineImage} alt={altMessage} />
+      <div>
+      <img className={`w-100 mb-2 mb-xxl-5  ${loading ? "preloader" : ""}`} src={canineImage} alt={altMessage} onLoad={() => setLoading(false)}/>
+      </div>
       <Col md={{ offset: 2, size: 8 }}>
         <Button
           className="w-75 get-random-button"

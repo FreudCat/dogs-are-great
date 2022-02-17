@@ -23,7 +23,7 @@ export const RenderSynonym = (props) => {
       <Col
         xs={{ offset: 2, size: 8 }}
         md={{ offset: 4, size: 4 }}
-        className="mb-5"
+        className="mb-5 pb-5"
       >
         <Button
           color="primary"

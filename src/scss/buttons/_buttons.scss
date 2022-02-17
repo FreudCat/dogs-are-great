@@ -23,6 +23,12 @@
   @include media-breakpoint-up(lgxl) {
     font-size: 1.5vw;
   }
+  @include media-breakpoint-up(xl) {
+    font-size: 2vw;
+  }
+  @include media-breakpoint-up(xxl) {
+    font-size: 3vw;
+  }
 }
 
 .btn.get-synonym-button {
@@ -31,5 +37,13 @@
   }
   @include media-breakpoint-up(lgxl) {
     font-size: 1.5vw;
+  }
+  @include media-breakpoint-up(xl) {
+    position: relative;
+    top: -2em;
+    font-size: 2vw;
+  }
+  @include media-breakpoint-up(xxl) {
+    font-size: 3vw;
   }
 }

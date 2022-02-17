@@ -4,10 +4,27 @@
   @include media-breakpoint-up(lg) {
     top: -8em;
   }
+  @include media-breakpoint-up(lgxl) {
+    top: -5em;
+  }
+  @include media-breakpoint-up(xl) {
+    top: -10em;
+  }
+  @include media-breakpoint-up(xxl) {
+    top: -15em;
+  }
+  @include media-breakpoint-up(supersize) {
+    top: -20em;
+  }
   .canine-card {
     border: none;
     border-radius: 10px;
     box-shadow: 0px 13px 32px -9px #939393;
+  }
+  .canine-card-name {
+    @include media-breakpoint-up(xl) {
+      font-size: 4vw;
+    }
   }
 }
 
@@ -17,8 +34,22 @@
   @include media-breakpoint-up(md) {
     font-size: 2.5vw;
   }
+  @include media-breakpoint-up(lgxl) {
+    font-size: 2vw;
+  }
+  @include media-breakpoint-up(xl) {
+    font-size: 3vw;
+  }
 }
 
+.card-text {
+  @include media-breakpoint-up(lg) {
+    font-size: 2.5vw;
+  }
+  @include media-breakpoint-up(lgxl) {
+    font-size: 2vw;
+  }
+}
 .fa-chevron-down {
   position: absolute;
   top: 10px;
@@ -27,4 +58,8 @@
 
 .rotate-chevron {
   transform: rotate(180deg);
+}
+
+.preloader {
+  opacity: 0.5;
 }
