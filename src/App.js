@@ -68,7 +68,7 @@ class App extends Component {
               temperamentWords={canineInfo.temperament}
             />
           ))}
-          <Footer />
+          {this.state.canineInfo.length === 0 && <Footer />}
       </Container>
     );
   }
