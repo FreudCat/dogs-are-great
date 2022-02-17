@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Container } from "reactstrap";
-import Header from "./components/Header";
-import ChooseCanineForm from "./components/CanineForm";
+import { Header } from "./components/Header";
+import { CanineForm } from "./components/CanineForm";
 import RenderCanines from "./components/RenderCanines";
 import GetSynonym from "./components/GetSynonym";
 import InitialBackground from "./components/InitialBackground";
@@ -12,17 +12,20 @@ const canineAPI = process.env.REACT_APP_CANINE_API_KEY;
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { selectedBreed: "wolfhound", canineInfo: [] }; // Setting the selectedBreed to the first option incase the user does not change the option
+    this.state = { selectedBreed: "", canineInfo: [] }; 
     this.handleChangeInApp = this.handleChangeInApp.bind(this);
   }
 
   // this event is updated based on the Choosecanineform component (see the render)
   handleChangeInApp(event) {
+    console.log(event);
     this.setState({ selectedBreed: event });
   }
 
   // This event is called based on a submission in the Choosecanineform component (see the render)
   callCanineAPI = async (event) => {
+    console.log("API was called");
+    console.log(this.state.selectedBreed);
     event.preventDefault();
     try {
       const res = await fetch(
@@ -48,12 +51,11 @@ class App extends Component {
       <Container fluid className="g-0">
         <Header headerText="Dogs of Skyrim and Fallout" />
         {/* The functions are sent over to the ChooseCanineForm and where they will be collected as props */}
-        <ChooseCanineForm
+        <CanineForm
           callCanineAPI={this.callCanineAPI}
           handleChangeInApp={this.handleChangeInApp}
         />
-        {this.state.canineInfo.length === 0 && <InitialBackground />
-          }
+        {this.state.canineInfo.length === 0 && <InitialBackground />}
         {this.state.canineInfo.length !== 0 &&
           this.state.canineInfo.map((canineInfo) => (
             <RenderCanines key={canineInfo.id} canineInfo={canineInfo} />
