@@ -1,7 +1,7 @@
 import React from "react";
 import { Row, Col } from "reactstrap";
 
-export const InitialBackground = () => {
+const InitialBackground = () => {
   return (
     <Row className="g-0 m-0 p-0">
       <Col xs={12}>
@@ -10,3 +10,5 @@ export const InitialBackground = () => {
     </Row>
   );
 };
+
+export default InitialBackground;

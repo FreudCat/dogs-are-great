@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Row, Col, Card, CardBody, CardTitle, Collapse } from "reactstrap";
-import { GetRandomImage } from "./GetRandomImage";
+import GetRandomImage from "./GetRandomImage";
 
-export const RenderCanines = (props) => {
+const RenderCanines = (props) => {
   const [collapseID, setCollapseID] = useState(0);
   const {
     name,
@@ -21,7 +21,7 @@ export const RenderCanines = (props) => {
 
   return (
     <Row className="d-flex g-0 canine-card-row text-center">
-      <Col xs={{ offset: 1, size: 10 }} lg={{offset: 2, size: 8}}>
+      <Col xs={{ offset: 1, size: 10 }} lg={{ offset: 2, size: 8 }}>
         <Card className="canine-card">
           <CardBody>
             <Col xs={12}>
@@ -56,64 +56,64 @@ export const RenderCanines = (props) => {
                 </Card>
               </Col>
               <Col md={{ offset: 2, size: 8 }} className="mb-md-2">
-              <Card>
-                <button
-                  className="cardDropdownHeader w-100 btn btn-outline-primary"
-                  onClick={toggle}
-                  data-event={2}
-                >
-                  Height and Weight
-                  <i
-                    className={`fa fa-chevron-down ${
-                      collapseID === 2 ? "rotate-chevron" : ""
-                    }`}
-                  ></i>
-                </button>
-                <Collapse isOpen={collapseID === 2}>
-                  <CardBody className="card-text">
-                    Height: {height.imperial} inches <br />
-                    Weight: {weight.imperial} pounds
-                  </CardBody>
-                </Collapse>
-              </Card>
+                <Card>
+                  <button
+                    className="cardDropdownHeader w-100 btn btn-outline-primary"
+                    onClick={toggle}
+                    data-event={2}
+                  >
+                    Height and Weight
+                    <i
+                      className={`fa fa-chevron-down ${
+                        collapseID === 2 ? "rotate-chevron" : ""
+                      }`}
+                    ></i>
+                  </button>
+                  <Collapse isOpen={collapseID === 2}>
+                    <CardBody className="card-text">
+                      Height: {height.imperial} inches <br />
+                      Weight: {weight.imperial} pounds
+                    </CardBody>
+                  </Collapse>
+                </Card>
               </Col>
               <Col md={{ offset: 2, size: 8 }} className="mb-md-2">
-              <Card>
-                <button
-                  className="cardDropdownHeader w-100 btn btn-outline-primary"
-                  onClick={toggle}
-                  data-event={3}
-                >
-                  Life Span
-                  <i
-                    className={`fa fa-chevron-down ${
-                      collapseID === 3 ? "rotate-chevron" : ""
-                    }`}
-                  ></i>
-                </button>
-                <Collapse isOpen={collapseID === 3}>
-                  <CardBody className="card-text">{life_span}</CardBody>
-                </Collapse>
-              </Card>
+                <Card>
+                  <button
+                    className="cardDropdownHeader w-100 btn btn-outline-primary"
+                    onClick={toggle}
+                    data-event={3}
+                  >
+                    Life Span
+                    <i
+                      className={`fa fa-chevron-down ${
+                        collapseID === 3 ? "rotate-chevron" : ""
+                      }`}
+                    ></i>
+                  </button>
+                  <Collapse isOpen={collapseID === 3}>
+                    <CardBody className="card-text">{life_span}</CardBody>
+                  </Collapse>
+                </Card>
               </Col>
               <Col md={{ offset: 2, size: 8 }} className="mb-md-5">
-              <Card>
-                <button
-                  className="cardDropdownHeader w-100 btn btn-outline-primary"
-                  onClick={toggle}
-                  data-event={4}
-                >
-                  Temperament
-                  <i
-                    className={`fa fa-chevron-down ${
-                      collapseID === 4 ? "rotate-chevron" : ""
-                    }`}
-                  ></i>
-                </button>
-                <Collapse isOpen={collapseID === 4}>
-                  <CardBody className="card-text">{temperament}</CardBody>
-                </Collapse>
-              </Card>
+                <Card>
+                  <button
+                    className="cardDropdownHeader w-100 btn btn-outline-primary"
+                    onClick={toggle}
+                    data-event={4}
+                  >
+                    Temperament
+                    <i
+                      className={`fa fa-chevron-down ${
+                        collapseID === 4 ? "rotate-chevron" : ""
+                      }`}
+                    ></i>
+                  </button>
+                  <Collapse isOpen={collapseID === 4}>
+                    <CardBody className="card-text">{temperament}</CardBody>
+                  </Collapse>
+                </Card>
               </Col>
             </Col>
           </CardBody>
@@ -122,3 +122,5 @@ export const RenderCanines = (props) => {
     </Row>
   );
 };
+
+export default RenderCanines;

@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { Container } from "reactstrap";
 import Header from "./components/Header";
 import CanineForm from "./components/CanineForm";
-import { RenderCanines } from "./components/RenderCanines";
-import { GetSynonym } from "./components/GetSynonym";
-import { InitialBackground } from "./components/InitialBackground";
+import RenderCanines from "./components/RenderCanines";
+import GetSynonym from "./components/GetSynonym";
+import InitialBackground from "./components/InitialBackground";
 import Footer from "./components/Footer";
 import "./App.css";
 

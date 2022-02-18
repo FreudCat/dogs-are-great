@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { RenderSynonym } from "./RenderSynonym";
+import RenderSynonym from "./RenderSynonym";
 
-export const GetSynonym = (props) => {
+const GetSynonym = (props) => {
   const [synonymInfo, setSynonymInfo] = useState([]);
   const wordArray = props.temperamentWords.split(", ");
 
@@ -42,3 +42,5 @@ export const GetSynonym = (props) => {
     </div>
   );
 };
+
+export default GetSynonym;

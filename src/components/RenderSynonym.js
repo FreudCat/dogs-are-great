@@ -9,7 +9,7 @@ import {
   Col,
 } from "reactstrap";
 
-export const RenderSynonym = (props) => {
+const RenderSynonym = (props) => {
   const [modal, setModal] = useState(false);
   const { synonymArray } = props;
 
@@ -46,3 +46,5 @@ export const RenderSynonym = (props) => {
     </Row>
   );
 };
+
+export default RenderSynonym;

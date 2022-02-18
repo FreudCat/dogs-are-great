@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Button, Col } from "reactstrap";
 import errorImage from "./../images/errImage.jpg";
 
-export const GetRandomImage = (props) => {
+const GetRandomImage = (props) => {
   const [tempImage, setTempImage] = useState("");
   const [canineImage, setCanineImage] = useState("");
   const [altMessage, setAltMessage] = useState("");
@@ -84,7 +84,12 @@ export const GetRandomImage = (props) => {
   return (
     <div>
       <div>
-      <img className={`w-100 mb-2 mb-xxl-5  ${loading ? "preloader" : ""}`} src={canineImage} alt={altMessage} onLoad={() => setLoading(false)}/>
+        <img
+          className={`w-100 mb-xxl-5 mb-2  ${loading ? "preloader" : ""}`}
+          src={canineImage}
+          alt={altMessage}
+          onLoad={() => setLoading(false)}
+        />
       </div>
       <Col md={{ offset: 2, size: 8 }}>
         <Button
@@ -98,3 +103,5 @@ export const GetRandomImage = (props) => {
     </div>
   );
 };
+
+export default GetRandomImage;
