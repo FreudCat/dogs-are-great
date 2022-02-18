@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Container } from "reactstrap";
-import { Header } from "./components/Header";
-import { CanineForm } from "./components/CanineForm";
+import Header from "./components/Header";
+import CanineForm from "./components/CanineForm";
 import { RenderCanines } from "./components/RenderCanines";
 import { GetSynonym } from "./components/GetSynonym";
 import { InitialBackground } from "./components/InitialBackground";
-import { Footer } from "./components/Footer";
+import Footer from "./components/Footer";
 import "./App.css";
 
 const canineAPI = process.env.REACT_APP_CANINE_API_KEY;
@@ -64,7 +64,7 @@ class App extends Component {
               temperamentWords={canineInfo.temperament}
             />
           ))}
-          {this.state.canineInfo.length === 0 && <Footer />}
+        {this.state.canineInfo.length === 0 && <Footer />}
       </Container>
     );
   }

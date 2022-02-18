@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Button, Form, Label, Input, Row, Col } from "reactstrap";
 
-export const CanineForm = (props) => {
+const CanineForm = (props) => {
   const [value, setValue] = useState("wolfhound"); // Setting the state to the first option incase the user does not change the option
   const { handleChangeInApp, callCanineAPI } = props;
 
@@ -78,3 +78,5 @@ export const CanineForm = (props) => {
     </Row>
   );
 };
+
+export default CanineForm;
