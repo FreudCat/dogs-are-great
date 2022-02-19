@@ -23,11 +23,14 @@ const Footer = () => {
         <ModalHeader toggle={toggle}>Hi there!</ModalHeader>
         <ModalBody>
           This app utilizes create-react-app to provide users with images of and
-          information about dogs found in Skyrim and Fallout. <br />
+          information about dogs found in Skyrim and Fallout.
+          <br />
           <br />
           React hooks are used to make asynchronous API calls, render
-          information, and pass data between components. <br />
-          <br />I use Bootstrap's React component library to style the app.
+          information, and pass data between components.
+          <br />
+          <br />I use Bootstrap&apos;s React component library to style the app
+          and Prettier and eslint to standarize the code.
         </ModalBody>
       </Modal>
     </Row>

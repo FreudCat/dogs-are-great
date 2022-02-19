@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { Container } from "reactstrap";
 import Header from "./components/Header";
 import CanineForm from "./components/CanineForm";
@@ -8,26 +8,22 @@ import InitialBackground from "./components/InitialBackground";
 import Footer from "./components/Footer";
 import "./App.css";
 
-const canineAPI = process.env.REACT_APP_CANINE_API_KEY;
-
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { selectedBreed: "", canineInfo: [] };
-    this.handleChangeInApp = this.handleChangeInApp.bind(this);
-  }
+const App = () => {
+  const canineAPI = process.env.REACT_APP_CANINE_API_KEY;
+  const [selectedBreed, setSelectedBreed] = useState("");
+  const [canineInfo, setCanineInfo] = useState([]);
 
   // this event is updated based on the Choosecanineform component (see the render)
-  handleChangeInApp(event) {
-    this.setState({ selectedBreed: event });
-  }
+  const handleChangeInApp = (event) => {
+    setSelectedBreed(event);
+  };
 
   // This event is called based on a submission in the Choosecanineform component (see the render)
-  callCanineAPI = async (event) => {
+  const callCanineAPI = async (event) => {
     event.preventDefault();
     try {
       const res = await fetch(
-        `https://api.thedogapi.com/v1/breeds/search?q=${this.state.selectedBreed}`,
+        `https://api.thedogapi.com/v1/breeds/search?q=${selectedBreed}`,
         {
           method: "GET",
           mode: "cors",
@@ -36,38 +32,33 @@ class App extends Component {
           },
         }
       );
-      const canineInformationFromAPI = await res.json(); //This sets the info from the api call into an object
-      this.setState({ canineInfo: canineInformationFromAPI });
+      const canineInformationFromAPI = await res.json();
+      setCanineInfo(canineInformationFromAPI);
     } catch (err) {
       console.log(err);
     }
   };
 
-  render() {
-    return (
-      <Container fluid className="g-0">
-        <Header headerText="Dogs of Skyrim and Fallout" />
-        {/* The functions are sent over to the ChooseCanineForm and where they will be collected as props */}
-        <CanineForm
-          callCanineAPI={this.callCanineAPI}
-          handleChangeInApp={this.handleChangeInApp}
-        />
-        {this.state.canineInfo.length === 0 && <InitialBackground />}
-        {this.state.canineInfo.length !== 0 &&
-          this.state.canineInfo.map((canineInfo) => (
-            <RenderCanines key={canineInfo.id} canineInfo={canineInfo} />
-          ))}
-        {this.state.canineInfo.length !== 0 &&
-          this.state.canineInfo.map((canineInfo) => (
-            <GetSynonym
-              key={canineInfo.id}
-              temperamentWords={canineInfo.temperament}
-            />
-          ))}
-        {this.state.canineInfo.length === 0 && <Footer />}
-      </Container>
-    );
-  }
-}
+  return (
+    <Container fluid className="g-0">
+      <Header headerText="Dogs of Skyrim and Fallout" />
+      {/* The functions are sent over to the ChooseCanineForm to be collected as props */}
+      <CanineForm
+        callCanineAPI={callCanineAPI}
+        handleChangeInApp={handleChangeInApp}
+      />
+      {canineInfo.length === 0 && <InitialBackground />}
+      {canineInfo.length !== 0 &&
+        canineInfo.map((canine) => (
+          <RenderCanines key={canine.id} canineInfo={canine} />
+        ))}
+      {canineInfo.length !== 0 &&
+        canineInfo.map((canine) => (
+          <GetSynonym key={canine.id} temperamentWords={canine.temperament} />
+        ))}
+      {canineInfo.length === 0 && <Footer />}
+    </Container>
+  );
+};
 
 export default App;

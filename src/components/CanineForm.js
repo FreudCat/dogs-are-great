@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import { Button, Form, Label, Input, Row, Col } from "reactstrap";
 
 const CanineForm = (props) => {
@@ -28,7 +29,11 @@ const CanineForm = (props) => {
             </Label>
           </Col>
 
-          {/* This value is updated when the use selects something new. Then, handleChange function is called. The handleChange function then calls two functions. One changes the text in the dropdown menu to the selected value and then the selectedBreed value is updated in Apps via props to be used in the API call */}
+          {/* This value is updated when the use selects something new.
+          Then, handleChange function is called. The handleChange function calls two functions.
+          One changes the text in the dropdown menu to the selected value.
+          Then the selectedBreed value is updated in Apps via props to be used in the API call */}
+
           <Col
             xs={{ offset: 1, size: 8 }}
             md={{ offset: 3, size: 4 }}
@@ -77,6 +82,11 @@ const CanineForm = (props) => {
       </Form>
     </Row>
   );
+};
+
+CanineForm.propTypes = {
+  handleChangeInApp: PropTypes.string,
+  callCanineAPI: PropTypes.string,
 };
 
 export default CanineForm;

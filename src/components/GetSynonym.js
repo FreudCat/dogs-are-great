@@ -1,13 +1,15 @@
+/* eslint no-shadow: ["error", { "allow": ["synonymInfo"] }] */
+/* eslint react/destructuring-assignment: [0] */
+// The above eslint lines turn off or makes exceptions to eslint rules
+
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import RenderSynonym from "./RenderSynonym";
 
 const GetSynonym = (props) => {
   const [synonymInfo, setSynonymInfo] = useState([]);
   const wordArray = props.temperamentWords.split(", ");
-
-  useEffect(() => {
-    getSynonyms();
-  }, []);
+  // Decided not to follow eslint warning above to decrease lines of code
 
   const getSynonyms = () => {
     wordArray.map(async (word) => {
@@ -22,7 +24,7 @@ const GetSynonym = (props) => {
             },
           }
         );
-        const wordInformationFromAPI = await res.json(); //This sets the info from the api call into an object
+        const wordInformationFromAPI = await res.json();
         setSynonymInfo((synonymInfo) => [
           ...synonymInfo,
           wordInformationFromAPI[0].word,
@@ -31,8 +33,11 @@ const GetSynonym = (props) => {
         console.log(err);
       }
     });
-    // setSynonymInfo((synonymInfo) => [...synonymInfo, tempArray]);
   };
+
+  useEffect(() => {
+    getSynonyms();
+  }, []);
 
   return (
     <div>
@@ -41,6 +46,10 @@ const GetSynonym = (props) => {
       )}
     </div>
   );
+};
+
+GetSynonym.propTypes = {
+  temperamentWords: PropTypes.string,
 };
 
 export default GetSynonym;
