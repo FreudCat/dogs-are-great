@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, Col } from "reactstrap";
+import { Button } from "reactstrap";
 import PropTypes from "prop-types";
 import errorImage from "../images/errImage.jpg";
 
@@ -87,23 +87,25 @@ const GetRandomImage = (props) => {
 
   return (
     <div>
-      <div>
+      <div className="random-image-div">
         <img
-          className={`w-100 mb-xxl-5 mb-2  ${loading ? "preloader" : ""}`}
+          className={`w-100 mb-xxl-5 mb-2 h-auto  ${
+            loading ? "preloader" : ""
+          }`}
           src={canineImage}
           alt={altMessage}
           onLoad={() => setLoading(false)}
         />
+        <div className="button-in-image">
+          <Button
+            className="get-random-button w-15"
+            color="primary"
+            onClick={getRandomImage}
+          >
+            Get new image
+          </Button>
+        </div>
       </div>
-      <Col md={{ offset: 2, size: 8 }}>
-        <Button
-          className="w-75 get-random-button"
-          color="primary"
-          onClick={getRandomImage}
-        >
-          Get another {canineName} image{" "}
-        </Button>
-      </Col>
     </div>
   );
 };
