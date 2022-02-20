@@ -1,21 +1,27 @@
+/* eslint prefer-destructuring: ["error", {"object": false}] */
+/* eslint-disable camelcase */
+
 import React, { useState } from "react";
 import { Row, Col, Card, CardBody, CardTitle, Collapse } from "reactstrap";
+import PropTypes from "prop-types";
 import GetRandomImage from "./GetRandomImage";
 
 const RenderCanines = (props) => {
   const [collapseID, setCollapseID] = useState(0);
   const {
-    name,
-    reference_image_id,
-    bred_for,
-    temperament,
-    weight,
-    height,
-    life_span,
-  } = props.canineInfo;
+    canineInfo: {
+      name,
+      reference_image_id,
+      bred_for,
+      temperament,
+      weight,
+      height,
+      life_span,
+    },
+  } = props;
 
   const toggle = (e) => {
-    let event = e.target.dataset.event;
+    const event = e.target.dataset.event;
     setCollapseID(collapseID === Number(event) ? 0 : Number(event));
   };
 
@@ -39,6 +45,7 @@ const RenderCanines = (props) => {
               <Col md={{ offset: 2, size: 8 }} className="mt-md-5 mb-md-2">
                 <Card>
                   <button
+                    type="button"
                     className="cardDropdownHeader w-100 btn btn-outline-primary"
                     onClick={toggle}
                     data-event={1}
@@ -48,7 +55,7 @@ const RenderCanines = (props) => {
                       className={`fa fa-chevron-down ${
                         collapseID === 1 ? "rotate-chevron" : ""
                       }`}
-                    ></i>
+                    />
                   </button>
                   <Collapse isOpen={collapseID === 1}>
                     <CardBody className="card-text">{bred_for}</CardBody>
@@ -58,6 +65,7 @@ const RenderCanines = (props) => {
               <Col md={{ offset: 2, size: 8 }} className="mb-md-2">
                 <Card>
                   <button
+                    type="button"
                     className="cardDropdownHeader w-100 btn btn-outline-primary"
                     onClick={toggle}
                     data-event={2}
@@ -67,7 +75,7 @@ const RenderCanines = (props) => {
                       className={`fa fa-chevron-down ${
                         collapseID === 2 ? "rotate-chevron" : ""
                       }`}
-                    ></i>
+                    />
                   </button>
                   <Collapse isOpen={collapseID === 2}>
                     <CardBody className="card-text">
@@ -80,6 +88,7 @@ const RenderCanines = (props) => {
               <Col md={{ offset: 2, size: 8 }} className="mb-md-2">
                 <Card>
                   <button
+                    type="button"
                     className="cardDropdownHeader w-100 btn btn-outline-primary"
                     onClick={toggle}
                     data-event={3}
@@ -89,7 +98,7 @@ const RenderCanines = (props) => {
                       className={`fa fa-chevron-down ${
                         collapseID === 3 ? "rotate-chevron" : ""
                       }`}
-                    ></i>
+                    />
                   </button>
                   <Collapse isOpen={collapseID === 3}>
                     <CardBody className="card-text">{life_span}</CardBody>
@@ -99,6 +108,7 @@ const RenderCanines = (props) => {
               <Col md={{ offset: 2, size: 8 }} className="mb-md-5">
                 <Card>
                   <button
+                    type="button"
                     className="cardDropdownHeader w-100 btn btn-outline-primary"
                     onClick={toggle}
                     data-event={4}
@@ -108,7 +118,7 @@ const RenderCanines = (props) => {
                       className={`fa fa-chevron-down ${
                         collapseID === 4 ? "rotate-chevron" : ""
                       }`}
-                    ></i>
+                    />
                   </button>
                   <Collapse isOpen={collapseID === 4}>
                     <CardBody className="card-text">{temperament}</CardBody>
@@ -121,6 +131,17 @@ const RenderCanines = (props) => {
       </Col>
     </Row>
   );
+};
+
+RenderCanines.propTypes = {
+  canineInfo: PropTypes.any,
+  name: PropTypes.string,
+  reference_image_id: PropTypes.string,
+  bred_for: PropTypes.string,
+  temperament: PropTypes.string,
+  weight: PropTypes.string,
+  height: PropTypes.string,
+  life_span: PropTypes.string,
 };
 
 export default RenderCanines;

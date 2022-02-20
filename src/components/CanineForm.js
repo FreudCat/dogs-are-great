@@ -85,8 +85,8 @@ const CanineForm = (props) => {
 };
 
 CanineForm.propTypes = {
-  handleChangeInApp: PropTypes.string,
-  callCanineAPI: PropTypes.string,
+  handleChangeInApp: PropTypes.any,
+  callCanineAPI: PropTypes.any,
 };
 
 export default CanineForm;

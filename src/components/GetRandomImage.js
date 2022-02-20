@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Button, Col } from "reactstrap";
-import errorImage from "./../images/errImage.jpg";
+import PropTypes from "prop-types";
+import errorImage from "../images/errImage.jpg";
 
 const GetRandomImage = (props) => {
   const [tempImage, setTempImage] = useState("");
@@ -10,11 +11,6 @@ const GetRandomImage = (props) => {
   const canineAPI = process.env.REACT_APP_CANINE_API_KEY;
   const { canineName, canineImageID } = props;
   const tempNameArray = canineName.toLowerCase().split(" ");
-
-  // This useEffect acts like the componentDidMount. Need to add another function inside to utilize async/await. Then call the function below. Added the empty dependency array at the very end so that the useEffect is only called once during the first render, and no everytime this page is re-rendered with the "get random image" button
-  useEffect(() => {
-    fetchInitialImage();
-  }, []);
 
   const fetchInitialImage = async () => {
     try {
@@ -41,6 +37,10 @@ const GetRandomImage = (props) => {
     }
   };
 
+  useEffect(() => {
+    fetchInitialImage();
+  }, []);
+
   const getRandomImage = () => {
     setLoading(true);
     let reformedArray = [];
@@ -61,7 +61,7 @@ const GetRandomImage = (props) => {
         const res = await fetch(
           `https://dog.ceo/api/breed/${reformedName}/images/random`
         );
-        const images = await res.json(); //This sets the info from the api call into an object
+        const images = await res.json(); // This sets the info from the api call into an object
         if (images.status === "success") {
           setTempImage(images.message);
         }
@@ -78,7 +78,7 @@ const GetRandomImage = (props) => {
   };
 
   useEffect(() => {
-    setCanineImage(tempImage ? tempImage : `${errorImage}`);
+    setCanineImage(tempImage || `${errorImage}`);
   }, [tempImage]);
 
   return (
@@ -102,6 +102,11 @@ const GetRandomImage = (props) => {
       </Col>
     </div>
   );
+};
+
+GetRandomImage.propTypes = {
+  canineName: PropTypes.string,
+  canineImageID: PropTypes.string,
 };
 
 export default GetRandomImage;

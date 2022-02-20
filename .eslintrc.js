@@ -34,5 +34,9 @@ module.exports = {
     "no-console": "off",
     "comma-dangle": ["error", "only-multiline"],
     "react/jsx-one-expression-per-line": "off",
+    "react/forbid-prop-types": [
+      "error",
+      { forbid: [], checkContextTypes: true, checkChildContextTypes: true },
+    ],
   },
 };
