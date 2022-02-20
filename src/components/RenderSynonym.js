@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import {
   Button,
   Modal,
@@ -45,6 +46,10 @@ const RenderSynonym = (props) => {
       </Modal>
     </Row>
   );
+};
+
+RenderSynonym.propTypes = {
+  synonymArray: PropTypes.array,
 };
 
 export default RenderSynonym;

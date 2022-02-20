@@ -44,6 +44,10 @@ const GetRandomImage = (props) => {
   const getRandomImage = () => {
     setLoading(true);
     let reformedArray = [];
+    // Note to future self: this api requires the path in various orders
+    // Ex: wolfhound/irish or sometimes german/shepherd
+    // Here, the breed is taken and reformed in different ways then mapped
+    // So that various strings are tried in the api call's path
     if (tempNameArray.length > 1) {
       reformedArray.push(`${tempNameArray[1]}/${tempNameArray[0]}`);
       reformedArray.push(`${tempNameArray[2]}/${tempNameArray[1]}`);
