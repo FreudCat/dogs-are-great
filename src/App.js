@@ -3,7 +3,6 @@ import { Container } from "reactstrap";
 import Header from "./components/Header";
 import CanineForm from "./components/CanineForm";
 import RenderCanines from "./components/RenderCanines";
-import GetSynonym from "./components/GetSynonym";
 import InitialBackground from "./components/InitialBackground";
 import Footer from "./components/Footer";
 import "./App.css";
@@ -51,10 +50,6 @@ const App = () => {
       {canineInfo.length !== 0 &&
         canineInfo.map((canine) => (
           <RenderCanines key={canine.id} canineInfo={canine} />
-        ))}
-      {canineInfo.length !== 0 &&
-        canineInfo.map((canine) => (
-          <GetSynonym key={canine.id} temperamentWords={canine.temperament} />
         ))}
       {canineInfo.length === 0 && <Footer />}
     </Container>

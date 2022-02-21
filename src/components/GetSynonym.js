@@ -2,6 +2,8 @@
 /* eslint react/destructuring-assignment: [0] */
 // The above eslint lines turn off or makes exceptions to eslint rules
 
+// This component is not used, but I'm keeping it here for future reference
+
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import RenderSynonym from "./RenderSynonym";

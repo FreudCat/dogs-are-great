@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import { Button } from "reactstrap";
 import PropTypes from "prop-types";
 import errorImage from "../images/errImage.jpg";
-// import PreloaderAnimation from "./PreloaderAnimation";
 
 const GetRandomImage = (props) => {
   const [tempImage, setTempImage] = useState("");
@@ -68,8 +67,6 @@ const GetRandomImage = (props) => {
     setLoading(true);
     let reformedArray = [];
 
-    // const resultArray = [];
-
     // Note to future self: this api requires the path in various orders
     // Ex: wolfhound/irish or sometimes german/shepherd
     // Here, the breed is taken and reformed in different ways then mapped
@@ -113,7 +110,6 @@ const GetRandomImage = (props) => {
   }, [tempImage]);
 
   const initialRender = useRef(true);
-
   useEffect(() => {
     if (initialRender.current) {
       initialRender.current = false;
