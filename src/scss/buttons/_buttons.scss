@@ -51,6 +51,10 @@
   }
 }
 
+.btn.make-invisible {
+  display: none;
+}
+
 .btn.get-synonym-button {
   @include media-breakpoint-up(md) {
     font-size: 2.5vw;

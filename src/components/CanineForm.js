@@ -60,9 +60,6 @@ const CanineForm = (props) => {
               <option className="option-size" value="rottweiler">
                 Rottweiler
               </option>
-              <option className="option-size" value="pit_bull">
-                Pit Bull
-              </option>
               <option className="option-size" value="cattle">
                 Cattle Dog
               </option>
