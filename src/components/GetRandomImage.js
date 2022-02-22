@@ -10,8 +10,8 @@ const GetRandomImage = (props) => {
   const [altMessage, setAltMessage] = useState("");
   const [loading, setLoading] = useState(true);
   const [clearTimer, setClearTimer] = useState(false);
-  const canineAPI = process.env.REACT_APP_CANINE_API_KEY;
   const { canineName, canineImageID } = props;
+  const canineAPI = process.env.REACT_APP_CANINE_API_KEY;
   const tempNameArray = canineName.toLowerCase().split(" ");
 
   const timerRef = useRef(null);
