@@ -7,7 +7,6 @@
 
 This project was initiated with [Create React App](https://github.com/facebook/create-react-app) and utilizes two separate API calls to grab images and characteristics of dogs based on user selection. In addition to React, I use ESlint and Prettier for code pattern formatting and SCSS for CSS preprocessing. This is still a work in progress 🚧 - see my to do list below for upcoming additions.
 
-<hr/>
 <br/>
 
 ## Getting Started
@@ -40,7 +39,6 @@ REACT_APP_CANINE_API_KEY = Your API key here
 
 2. In the terminal, type `npm run sass` to start watching the sass file
 
-<hr/>
 <br/>
 
 ## React Elements
@@ -49,7 +47,6 @@ REACT_APP_CANINE_API_KEY = Your API key here
 - Proptypes
 - React Hooks
 
-<hr/>
 <br/>
 
 ## To-do
