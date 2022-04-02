@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+<h1 align="center">Dogs of Skyrim and Fallout</h1>
+<p align="center">What can I say? I like The Elder Scrolls V and Fallout 4</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<br/>
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+This project was initiated with [Create React App](https://github.com/facebook/create-react-app) and utilizes two separate API calls to grab images and characteristics of dogs based on user selection. In addition to React, I use ESlint and Prettier for code pattern formatting and SCSS for CSS preprocessing. This is still a work in progress 🚧 - see my to do list below for upcoming additions.
 
-### `npm start`
+<hr/>
+<br/>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Getting Started
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Incorporating your unique API key
 
-### `npm test`
+1.  Get your API key from [TheDogAPI](https://thedogapi.com/) by signing up for a free account and requesting a key
+2.  Create a `.env` file in the root directory
+3.  Add `.env` to your `.gitignore` file (even if you don't think you are going to do any commits, it's better to err on the side of security).
+4.  Copy the following line of code into the `.env` file and input your API key where prompted
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<pre>
+REACT_APP_CANINE_API_KEY = Your API key here
+</pre>
 
-### `npm run build`
+### Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Make sure that you have a local or global installation of [Node.js](https://nodejs.org/en/)
+2. Fork then clone this repository to your local environment
+3. Navigate to the folder via CLI or terminal and type `npm install` to install dependencies
+4. Run `npm start` to open the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Auto-compile Sass:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. In the package.json file, add the following code to your `scripts` block
 
-### `npm run eject`
+```json
+"sass": "node-sass -w src/scss/App.scss -o src --recursive"
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. In the terminal, type `npm run sass` to start watching the sass file
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<hr/>
+<br/>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## React Elements
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Destructured props
+- Proptypes
+- React Hooks
 
-## Learn More
+<hr/>
+<br/>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## To-do
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[x] Add abstract <br/>
+[ ] Create JSON containing canine info for own API call <br/>
+[ ] Create API call for public JSON <br/>
+[ ] Render API data into app <br/>

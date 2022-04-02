@@ -1,7 +1,7 @@
 /* eslint prefer-destructuring: ["error", {"object": false}] */
 /* eslint-disable camelcase */
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Row, Col, Card, CardBody, CardTitle, Collapse } from "reactstrap";
 import PropTypes from "prop-types";
 import GetRandomImage from "./GetRandomImage";
@@ -24,6 +24,20 @@ const RenderCanines = (props) => {
     const event = e.target.dataset.event;
     setCollapseID(collapseID === Number(event) ? 0 : Number(event));
   };
+
+  const fetchMyAPI = async () => {
+    try {
+      const res = await fetch("data.json");
+      const myAPI = await res.json();
+      console.log(myAPI.breed);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    fetchMyAPI();
+  }, []);
 
   return (
     <Row className="d-flex g-0 canine-card-row text-center">
