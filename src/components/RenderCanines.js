@@ -9,6 +9,7 @@ import RenderMyApi from "./RenderMyApi";
 
 const RenderCanines = (props) => {
   const [collapseID, setCollapseID] = useState(0);
+  const [gameBreed, setGameBreed] = useState("");
   const {
     canineInfo: {
       name,
@@ -21,6 +22,12 @@ const RenderCanines = (props) => {
     },
   } = props;
 
+  // This function is passed to RenderMyApi.js, it will get the info from that component
+  const getGameBreed = async (event) => {
+    setGameBreed(event);
+    console.log(gameBreed);
+  };
+
   const toggle = (e) => {
     const event = e.target.dataset.event;
     setCollapseID(collapseID === Number(event) ? 0 : Number(event));
@@ -28,6 +35,7 @@ const RenderCanines = (props) => {
 
   return (
     <Row className="d-flex g-0 canine-card-row text-center">
+      <RenderMyApi canineForOwnApi={name} getGameBreed={getGameBreed} />
       <Col xs={{ offset: 1, size: 10 }} lg={{ offset: 2, size: 8 }}>
         <Card className="canine-card">
           <CardBody>
@@ -134,9 +142,18 @@ const RenderCanines = (props) => {
                     onClick={toggle}
                     data-event={5}
                   >
-                    <RenderMyApi canineForOwnApi={name} />
-                    The Skyrim Version
+                    <i
+                      className={`fa fa-chevron-down ${
+                        collapseID === 5 ? "rotate-chevron" : ""
+                      }`}
+                    />
+                    The {gameBreed.game} Version
                   </button>
+                  <Collapse isOpen={collapseID === 5}>
+                    <CardBody className="card-text">
+                      <img className="game-dog" src={gameBreed.url} alt="" />
+                    </CardBody>
+                  </Collapse>
                 </Card>
               </Col>
             </Col>
