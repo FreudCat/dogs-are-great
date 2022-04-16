@@ -6,10 +6,13 @@ import { Row, Col, Card, CardBody, CardTitle, Collapse } from "reactstrap";
 import PropTypes from "prop-types";
 import GetRandomImage from "./GetRandomImage";
 import RenderMyApi from "./RenderMyApi";
+import RenderGameDog from "./RenderGameDog";
 
 const RenderCanines = (props) => {
   const [collapseID, setCollapseID] = useState(0);
   const [gameBreed, setGameBreed] = useState("");
+  // const [dogList, setDogList] = useState();
+  // const [dogList, setDogList] = useState();
   const {
     canineInfo: {
       name,
@@ -25,8 +28,11 @@ const RenderCanines = (props) => {
   // This function is passed to RenderMyApi.js, it will get the info from that component
   const getGameBreed = async (event) => {
     setGameBreed(event);
-    console.log(gameBreed);
   };
+
+  // const createDogList = async (event) => {
+  //   setDogList(event);
+  // };
 
   const toggle = (e) => {
     const event = e.target.dataset.event;
@@ -35,7 +41,11 @@ const RenderCanines = (props) => {
 
   return (
     <Row className="d-flex g-0 canine-card-row text-center">
-      <RenderMyApi canineForOwnApi={name} getGameBreed={getGameBreed} />
+      <RenderMyApi
+        canineForOwnApi={name}
+        getGameBreed={getGameBreed}
+        // createDogList={createDogList}
+      />
       <Col xs={{ offset: 1, size: 10 }} lg={{ offset: 2, size: 8 }}>
         <Card className="canine-card">
           <CardBody>
@@ -139,7 +149,11 @@ const RenderCanines = (props) => {
                   <button
                     type="button"
                     className="cardDropdownHeader w-100 btn btn-outline-primary"
-                    onClick={toggle}
+                    onClick={(e) => {
+                      toggle(e);
+                      // getList(e);
+                    }}
+                    // onClick={toggle}
                     data-event={5}
                   >
                     <i
@@ -151,7 +165,35 @@ const RenderCanines = (props) => {
                   </button>
                   <Collapse isOpen={collapseID === 5}>
                     <CardBody className="card-text">
-                      <img className="game-dog" src={gameBreed.url} alt="" />
+                      <figure>
+                        <img
+                          className="game-dog"
+                          src={gameBreed.url}
+                          alt={gameBreed.alt}
+                        />
+                        <figcaption className="italic">
+                          {gameBreed.alt}
+                        </figcaption>
+                      </figure>
+                      <p className="fw-bold">
+                        {name}s in {gameBreed.game}
+                      </p>
+                      {gameBreed.game !== undefined && (
+                        <RenderGameDog dogList={gameBreed} />
+                      )}
+                      {/* <gameBreed != null && RenderGameDog dogList={gameBreed} /> */}
+                      {/* {Object.entries(gameBreed.specific_dog).forEach((dog) => {
+                        <ul>
+                          <li>
+                            <span>Name: </span>
+                            {dog[1].name}
+                          </li>
+                          <li>
+                            <span>Location: </span>
+                            {dog[1].location}
+                          </li>
+                        </ul>;
+                      })} */}
                     </CardBody>
                   </Collapse>
                 </Card>

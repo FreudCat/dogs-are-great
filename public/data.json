@@ -5,26 +5,24 @@
       "specific_dog": [
         {
           "name": "Meeko",
-          "location": "",
-          "to_obtain": ""
+          "location": "Meeko's Shack in Hjaalmarch"
         },
         {
           "name": "Vigilance",
-          "location": "",
-          "to_obtain": ""
+          "location": "Markarth stables"
         },
         {
           "name": "Stray Dog",
-          "location": "",
-          "to_obtain": ""
+          "location": "Random Encounter"
         },
         {
           "name": "Barbas",
-          "location": "",
-          "to_obtain": ""
+          "location": "Outside of Falkreath"
         }
       ],
-      "url": "https://images.uesp.net/f/f4/SR-creature-Meeko.jpg"
+      "url": "https://images.uesp.net/f/f4/SR-creature-Meeko.jpg",
+      "alt": "Meeko from Skyrim",
+      "attribution": "Bethesda Softworks under Attribution-ShareAlike 2.5 License"
     },
     "GermanShepherdDog":
     {
@@ -32,11 +30,11 @@
       "specific_dog": [
         {
           "name": "Dogmeat",
-          "location": "",
-          "to_obtain": ""
+          "location": "Red Rocket truckstop"
         }
       ],
-      "url": "https://static.wikia.nocookie.net/fallout/images/2/26/FO4_Dogmeat_Infobox.png/revision/latest?cb=20210508063802"
+      "url": "https://cdn.pastemagazine.com/www/articles/2021/06/28/dogmeat_passing_main.jpg",
+      "alt": "Dogmeat from Fallout 4"
     },
     "AustralianCattleDog":
     {
@@ -44,11 +42,11 @@
       "specific_dog": [
         {
           "name": "Dogmeat",
-          "location": "",
-          "to_obtain": ""
+          "location": "Scrapyard, Vault 101"
         }
       ],
-      "url": "https://static.wikia.nocookie.net/fallout/images/1/1e/Dogmeat_FO3.jpg/revision/latest/scale-to-width-down/1000?cb=20190829143502"
+      "url": "https://www.giantbomb.com/a/uploads/scale_small/1/17172/1697497-eyrxe.jpg",
+      "alt": "Dogmeat from Fallout 3"
     },
     "Rottweiler":
     {
@@ -56,37 +54,35 @@
       "specific_dog": [
         {
           "name": "Junkyard Dog",
-          "location": "",
-          "to_obtain": ""
+          "location": "Random encounter with trader Gene"
         },
         {
           "name": "Kate",
-          "location": "",
-          "to_obtain": ""
+          "location": "Overpass near Neponset Park"
         },
         {
           "name": "Kyle",
-          "location": "",
-          "to_obtain": ""
+          "location": "Overpass near Neponset Park"
         }
       ],
-      "url": "https://fallout.fandom.com/wiki/Kate_(dog)?file=Kate_dog.png"
+      "url": "https://assets.vg247.com/current//2015/11/fallout_4_what_son_2.jpg",
+      "alt": "Kate from Fallout 4"
     },
     "SiberianHusky":
     {
       "game": "Skyrim",
       "specific_dog": [
         {
-          "name": "Meeko",
-          "location": "",
-          "to_obtain": ""
+          "name": "Bran",
+          "location": "Fort Dawnguard"
         },
         {
           "name": "Sceolang",
-          "location": "",
-          "to_obtain": ""
+          "location": "Fort Dawnguard"
         }
       ],
-      "url": "https://static.wikia.nocookie.net/elderscrolls/images/4/42/Meeko.jpg/revision/latest/scale-to-width-down/696?cb=20120207195605"
+      "url": "https://images.uesp.net/archive/8/85/20120803194836%21SR-creature-Sceolang.jpg",
+      "alt": "Bran from Skyrim",
+      "attribution": "Bethesda Softworks under Attribution-ShareAlike 2.5 License"
     }
 }

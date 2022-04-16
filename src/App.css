@@ -259,6 +259,15 @@
   100% {
     top: 0; } }
 
+.game-dog {
+  width: 100%;
+  box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.44); }
+  .game-dog .italic {
+    font-style: italic; }
+
+.game-dog-text {
+  text-align: left; }
+
 body.modal-open {
   padding-right: 0 !important; }
 
