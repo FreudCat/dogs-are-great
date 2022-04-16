@@ -3,8 +3,9 @@
 @import "./../../../node_modules/bootstrap/scss/mixins";
 
 .App-header {
+  position: relative;
   background-image: url("./images/pattern-bg.png");
-  height: 250px;
+  height: 300px;
   background-size: cover;
   background-repeat: no-repeat;
   h1 {

@@ -1,39 +1,37 @@
-.position-relative {
-  position: relative;
-  top: -160px;
-  .canine-form {
-    position: absolute;
-    color: #ffffff;
+.canine-form {
+  position: absolute;
+  top: 75px;
+  color: #ffffff;
+  @include media-breakpoint-up(md) {
+    font-size: 3.5vw;
+  }
+  @include media-breakpoint-up(lg) {
+    font-size: 3vw;
+  }
+  @include media-breakpoint-up(lgxl) {
+    font-size: 2vw;
+  }
+  @include media-breakpoint-up(xl) {
+    font-size: 2vw;
+  }
+  .dropdown-form {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
     @include media-breakpoint-up(md) {
-      font-size: 3.5vw;
-    }
-    @include media-breakpoint-up(lg) {
-      font-size: 3vw;
+      font-size: 2vw;
     }
     @include media-breakpoint-up(lgxl) {
-      font-size: 2vw;
+      font-size: 1.5vw;
     }
     @include media-breakpoint-up(xl) {
-      font-size: 2vw;
+      font-size: 1.5vw;
     }
-    .dropdown-form {
-      border-top-right-radius: 0px;
-      border-bottom-right-radius: 0px;
-      border-top-left-radius: 5px;
-      border-bottom-left-radius: 5px;
-      @include media-breakpoint-up(md) {
-        font-size: 2vw;
-      }
-      @include media-breakpoint-up(lgxl) {
-        font-size: 1.5vw;
-      }
-      @include media-breakpoint-up(xl) {
-        font-size: 1.5vw;
-      }
-      
-    }
+    
   }
 }
+
 
 .option-size {
   @include media-breakpoint-up(md) {

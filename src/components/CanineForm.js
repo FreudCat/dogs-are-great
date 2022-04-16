@@ -11,7 +11,7 @@ const CanineForm = (props) => {
   }, [value, handleChangeInApp]);
 
   return (
-    <Row className="position-relative g-0">
+    <Row className="g-0">
       <Form className="col-12 canine-form" onSubmit={callCanineAPI}>
         {/* This onsubmit collects as props the callCanineAPI function */}
         <Row className="g-0">

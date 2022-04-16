@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import CanineForm from "./components/CanineForm";
 import RenderCanines from "./components/RenderCanines";
 import InitialBackground from "./components/InitialBackground";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 import "./App.css";
 
 const App = () => {
@@ -51,7 +51,7 @@ const App = () => {
         canineInfo.map((canine) => (
           <RenderCanines key={canine.id} canineInfo={canine} />
         ))}
-      {canineInfo.length === 0 && <Footer />}
+      {/* {canineInfo.length === 0 && <Footer />} */}
     </Container>
   );
 };
