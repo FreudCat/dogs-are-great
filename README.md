@@ -1,6 +1,11 @@
 <h1 align="center">Dogs of Skyrim and Fallout</h1>
 <p align="center">What can I say? I like The Elder Scrolls V and Fallout 4</p>
+
+<div align="center">
+  
 [![Netlify Status](https://api.netlify.com/api/v1/badges/6f35eb57-55c5-4dde-a43c-3b8cb3007ec0/deploy-status)](https://app.netlify.com/sites/greatdogs/deploys)
+
+</div>
 <br/>
 
 ## Overview
