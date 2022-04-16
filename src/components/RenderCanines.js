@@ -1,10 +1,11 @@
 /* eslint prefer-destructuring: ["error", {"object": false}] */
 /* eslint-disable camelcase */
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Row, Col, Card, CardBody, CardTitle, Collapse } from "reactstrap";
 import PropTypes from "prop-types";
 import GetRandomImage from "./GetRandomImage";
+import RenderMyApi from "./RenderMyApi";
 
 const RenderCanines = (props) => {
   const [collapseID, setCollapseID] = useState(0);
@@ -24,20 +25,6 @@ const RenderCanines = (props) => {
     const event = e.target.dataset.event;
     setCollapseID(collapseID === Number(event) ? 0 : Number(event));
   };
-
-  const fetchMyAPI = async () => {
-    try {
-      const res = await fetch("data.json");
-      const myAPI = await res.json();
-      console.log(myAPI.breed);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  useEffect(() => {
-    fetchMyAPI();
-  }, []);
 
   return (
     <Row className="d-flex g-0 canine-card-row text-center">
@@ -137,6 +124,19 @@ const RenderCanines = (props) => {
                   <Collapse isOpen={collapseID === 4}>
                     <CardBody className="card-text">{temperament}</CardBody>
                   </Collapse>
+                </Card>
+              </Col>
+              <Col md={{ offset: 2, size: 8 }} className="mb-md-5">
+                <Card>
+                  <button
+                    type="button"
+                    className="cardDropdownHeader w-100 btn btn-outline-primary"
+                    onClick={toggle}
+                    data-event={5}
+                  >
+                    <RenderMyApi canineForOwnApi={name} />
+                    The Skyrim Version
+                  </button>
                 </Card>
               </Col>
             </Col>
