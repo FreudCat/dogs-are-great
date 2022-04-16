@@ -1,17 +1,17 @@
 .canine-card-row {
   position: relative;
   top: -3em;
+  @include media-breakpoint-up(md) {
+    top: -12em;
+  }
   @include media-breakpoint-up(lg) {
     top: -8em;
   }
   @include media-breakpoint-up(lgxl) {
     top: -5em;
   }
-  @include media-breakpoint-up(xl) {
-    top: -10em;
-  }
   @include media-breakpoint-up(xxl) {
-    top: -15em;
+    top: -10em;
   }
   @include media-breakpoint-up(supersize) {
     top: -20em;
@@ -23,8 +23,15 @@
   }
   .canine-card-name {
     @include media-breakpoint-up(xl) {
-      font-size: 4vw;
+      font-size: 3vw;
     }
+  }
+}
+
+.main-image {
+  width: 100%;
+  @include media-breakpoint-up(xl) {
+    width: 75%;
   }
 }
 
@@ -37,9 +44,6 @@
   @include media-breakpoint-up(lgxl) {
     font-size: 2vw;
   }
-  @include media-breakpoint-up(xl) {
-    font-size: 3vw;
-  }
 }
 
 .card-text {
@@ -47,7 +51,7 @@
     font-size: 2.5vw;
   }
   @include media-breakpoint-up(lgxl) {
-    font-size: 2vw;
+    font-size: 1.5vw;
   }
 }
 .fa-chevron-down {
@@ -77,12 +81,21 @@
   opacity: 0.5;
   box-shadow: 0px 1px 30px -9px #A5A5A5;
   .preloader-text {
-    font-size: 2vw;
+    font-size: 3.5vw;
     display: inline-block;
     font-weight: 600;
     color: #000000;
     margin-left: 5px;
     font-family: Montserrat;
+    @include media-breakpoint-up(md) {
+      font-size: 2.5vw;
+    }
+    @include media-breakpoint-up(lgxl) {
+      font-size: 2vw;
+    }
+    @include media-breakpoint-up(xl) {
+      font-size: 1.5vw;
+    }
   }
   .bounceball {
     position: relative;
@@ -99,12 +112,22 @@
       background-color: black;
       transform-origin: 50%;
       animation: bounce 500ms alternate infinite ease;
+      @include media-breakpoint-up(md) {
+        width: 20px;
+        height: 20px;
+      }
+      @include media-breakpoint-up(lg) {
+        right: 150px;
+      }
     }
   }
   
   @keyframes bounce {
     0% {
-      top: 40px;
+      top: 30px;
+      @include media-breakpoint-up(md) {
+        top: 60px;
+      }
       height: 5px;
       border-radius: 60px 60px 20px 20px;
       transform: scaleX(2);
@@ -123,8 +146,8 @@
 .game-dog {
   width: 100%;
   box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.44);
-  .italic {
-    font-style: italic;
+  @include media-breakpoint-up(xl) {
+    width: 75%;
   }
 }
 

@@ -26,13 +26,10 @@
   border-bottom-left-radius: 0px; }
   @media (min-width: 1024px) {
     .btn.submit-button {
-      font-size: 3vw; } }
-  @media (min-width: 1200px) {
-    .btn.submit-button {
-      font-size: 1.5vw; } }
+      font-size: 2vw; } }
   @media (min-width: 1400px) {
     .btn.submit-button {
-      font-size: 3vw; } }
+      font-size: 1.5vw; } }
 
 .random-image-div {
   position: relative;
@@ -47,6 +44,17 @@
     content: "";
     display: block;
     height: 50%; }
+  @media (min-width: 1400px) {
+    .button-in-image {
+      right: 115px; } }
+  @media (min-width: 1900px) {
+    .button-in-image {
+      right: 170px;
+      bottom: 50px; } }
+  @media (min-width: 2500px) {
+    .button-in-image {
+      right: 230px;
+      bottom: 50px; } }
   .button-in-image .btn.get-random-button {
     border: 1px solid #ffffff;
     font-size: 2.5vw;
@@ -59,12 +67,9 @@
     @media (min-width: 1200px) {
       .button-in-image .btn.get-random-button {
         font-size: 1.5vw; } }
-    @media (min-width: 1400px) {
-      .button-in-image .btn.get-random-button {
-        font-size: 2vw; } }
     @media (min-width: 1900px) {
       .button-in-image .btn.get-random-button {
-        font-size: 3vw; } }
+        font-size: 1vw; } }
 
 .btn.make-invisible {
   display: none; }
@@ -108,12 +113,15 @@
     @media (min-width: 768px) {
       .position-relative .canine-form {
         font-size: 3.5vw; } }
+    @media (min-width: 1024px) {
+      .position-relative .canine-form {
+        font-size: 3vw; } }
     @media (min-width: 1200px) {
       .position-relative .canine-form {
         font-size: 2vw; } }
     @media (min-width: 1400px) {
       .position-relative .canine-form {
-        font-size: 3vw; } }
+        font-size: 2vw; } }
     .position-relative .canine-form .dropdown-form {
       border-top-right-radius: 0px;
       border-bottom-right-radius: 0px;
@@ -121,13 +129,13 @@
       border-bottom-left-radius: 5px; }
       @media (min-width: 768px) {
         .position-relative .canine-form .dropdown-form {
-          font-size: 3vw; } }
+          font-size: 2vw; } }
       @media (min-width: 1200px) {
         .position-relative .canine-form .dropdown-form {
           font-size: 1.5vw; } }
       @media (min-width: 1400px) {
         .position-relative .canine-form .dropdown-form {
-          font-size: 3vw; } }
+          font-size: 1.5vw; } }
 
 @media (min-width: 768px) {
   .option-size {
@@ -156,18 +164,18 @@
 .canine-card-row {
   position: relative;
   top: -3em; }
+  @media (min-width: 768px) {
+    .canine-card-row {
+      top: -12em; } }
   @media (min-width: 1024px) {
     .canine-card-row {
       top: -8em; } }
   @media (min-width: 1200px) {
     .canine-card-row {
       top: -5em; } }
-  @media (min-width: 1400px) {
-    .canine-card-row {
-      top: -10em; } }
   @media (min-width: 1900px) {
     .canine-card-row {
-      top: -15em; } }
+      top: -10em; } }
   @media (min-width: 2500px) {
     .canine-card-row {
       top: -20em; } }
@@ -177,7 +185,13 @@
     box-shadow: 0px 13px 32px -9px #939393; }
   @media (min-width: 1400px) {
     .canine-card-row .canine-card-name {
-      font-size: 4vw; } }
+      font-size: 3vw; } }
+
+.main-image {
+  width: 100%; }
+  @media (min-width: 1400px) {
+    .main-image {
+      width: 75%; } }
 
 .btn.cardDropdownHeader {
   position: relative;
@@ -188,9 +202,6 @@
   @media (min-width: 1200px) {
     .btn.cardDropdownHeader {
       font-size: 2vw; } }
-  @media (min-width: 1400px) {
-    .btn.cardDropdownHeader {
-      font-size: 3vw; } }
 
 @media (min-width: 1024px) {
   .card-text {
@@ -198,7 +209,7 @@
 
 @media (min-width: 1200px) {
   .card-text {
-    font-size: 2vw; } }
+    font-size: 1.5vw; } }
 
 .fa-chevron-down {
   position: absolute;
@@ -224,12 +235,21 @@
   opacity: 0.5;
   box-shadow: 0px 1px 30px -9px #A5A5A5; }
   .preloader .preloader-text {
-    font-size: 2vw;
+    font-size: 3.5vw;
     display: inline-block;
     font-weight: 600;
     color: #000000;
     margin-left: 5px;
     font-family: Montserrat; }
+    @media (min-width: 768px) {
+      .preloader .preloader-text {
+        font-size: 2.5vw; } }
+    @media (min-width: 1200px) {
+      .preloader .preloader-text {
+        font-size: 2vw; } }
+    @media (min-width: 1400px) {
+      .preloader .preloader-text {
+        font-size: 1.5vw; } }
   .preloader .bounceball {
     position: relative;
     height: 10px;
@@ -245,10 +265,19 @@
       background-color: black;
       transform-origin: 50%;
       animation: bounce 500ms alternate infinite ease; }
+      @media (min-width: 768px) {
+        .preloader .bounceball:before {
+          width: 20px;
+          height: 20px; } }
+      @media (min-width: 1024px) {
+        .preloader .bounceball:before {
+          right: 150px; } }
 
 @keyframes bounce {
   0% {
-    top: 40px;
+    top: 30px;
+    @media (min-width: 768px) {
+      top: 60px; }
     height: 5px;
     border-radius: 60px 60px 20px 20px;
     transform: scaleX(2); }
@@ -262,8 +291,9 @@
 .game-dog {
   width: 100%;
   box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.44); }
-  .game-dog .italic {
-    font-style: italic; }
+  @media (min-width: 1400px) {
+    .game-dog {
+      width: 75%; } }
 
 .game-dog-text {
   text-align: left; }

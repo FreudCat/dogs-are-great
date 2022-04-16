@@ -11,8 +11,6 @@ import RenderGameDog from "./RenderGameDog";
 const RenderCanines = (props) => {
   const [collapseID, setCollapseID] = useState(0);
   const [gameBreed, setGameBreed] = useState("");
-  // const [dogList, setDogList] = useState();
-  // const [dogList, setDogList] = useState();
   const {
     canineInfo: {
       name,
@@ -30,10 +28,6 @@ const RenderCanines = (props) => {
     setGameBreed(event);
   };
 
-  // const createDogList = async (event) => {
-  //   setDogList(event);
-  // };
-
   const toggle = (e) => {
     const event = e.target.dataset.event;
     setCollapseID(collapseID === Number(event) ? 0 : Number(event));
@@ -41,17 +35,13 @@ const RenderCanines = (props) => {
 
   return (
     <Row className="d-flex g-0 canine-card-row text-center">
-      <RenderMyApi
-        canineForOwnApi={name}
-        getGameBreed={getGameBreed}
-        // createDogList={createDogList}
-      />
+      <RenderMyApi canineForOwnApi={name} getGameBreed={getGameBreed} />
       <Col xs={{ offset: 1, size: 10 }} lg={{ offset: 2, size: 8 }}>
         <Card className="canine-card">
           <CardBody>
             <Col xs={12}>
               <CardTitle>
-                <h2 className="canine-card-name">{name}</h2>
+                <h2 className="mb-md-5 canine-card-name">{name}</h2>
               </CardTitle>
             </Col>
             <Col xs={12} className="mb-3">
@@ -70,11 +60,6 @@ const RenderCanines = (props) => {
                     data-event={1}
                   >
                     Historical Job
-                    <i
-                      className={`fa fa-chevron-down ${
-                        collapseID === 1 ? "rotate-chevron" : ""
-                      }`}
-                    />
                   </button>
                   <Collapse isOpen={collapseID === 1}>
                     <CardBody className="card-text">{bred_for}</CardBody>
@@ -90,11 +75,6 @@ const RenderCanines = (props) => {
                     data-event={2}
                   >
                     Height and Weight
-                    <i
-                      className={`fa fa-chevron-down ${
-                        collapseID === 2 ? "rotate-chevron" : ""
-                      }`}
-                    />
                   </button>
                   <Collapse isOpen={collapseID === 2}>
                     <CardBody className="card-text">
@@ -113,18 +93,13 @@ const RenderCanines = (props) => {
                     data-event={3}
                   >
                     Life Span
-                    <i
-                      className={`fa fa-chevron-down ${
-                        collapseID === 3 ? "rotate-chevron" : ""
-                      }`}
-                    />
                   </button>
                   <Collapse isOpen={collapseID === 3}>
                     <CardBody className="card-text">{life_span}</CardBody>
                   </Collapse>
                 </Card>
               </Col>
-              <Col md={{ offset: 2, size: 8 }} className="mb-md-5">
+              <Col md={{ offset: 2, size: 8 }} className="mb-md-2">
                 <Card>
                   <button
                     type="button"
@@ -133,11 +108,6 @@ const RenderCanines = (props) => {
                     data-event={4}
                   >
                     Temperament
-                    <i
-                      className={`fa fa-chevron-down ${
-                        collapseID === 4 ? "rotate-chevron" : ""
-                      }`}
-                    />
                   </button>
                   <Collapse isOpen={collapseID === 4}>
                     <CardBody className="card-text">{temperament}</CardBody>
@@ -156,24 +126,17 @@ const RenderCanines = (props) => {
                     // onClick={toggle}
                     data-event={5}
                   >
-                    <i
-                      className={`fa fa-chevron-down ${
-                        collapseID === 5 ? "rotate-chevron" : ""
-                      }`}
-                    />
                     The {gameBreed.game} Version
                   </button>
                   <Collapse isOpen={collapseID === 5}>
                     <CardBody className="card-text">
-                      <figure>
+                      <figure className="mb-lg-5">
                         <img
                           className="game-dog"
                           src={gameBreed.url}
                           alt={gameBreed.alt}
                         />
-                        <figcaption className="italic">
-                          {gameBreed.alt}
-                        </figcaption>
+                        <figcaption>{gameBreed.alt}</figcaption>
                       </figure>
                       <p className="fw-bold">
                         {name}s in {gameBreed.game}
@@ -181,19 +144,6 @@ const RenderCanines = (props) => {
                       {gameBreed.game !== undefined && (
                         <RenderGameDog dogList={gameBreed} />
                       )}
-                      {/* <gameBreed != null && RenderGameDog dogList={gameBreed} /> */}
-                      {/* {Object.entries(gameBreed.specific_dog).forEach((dog) => {
-                        <ul>
-                          <li>
-                            <span>Name: </span>
-                            {dog[1].name}
-                          </li>
-                          <li>
-                            <span>Location: </span>
-                            {dog[1].location}
-                          </li>
-                        </ul>;
-                      })} */}
                     </CardBody>
                   </Collapse>
                 </Card>

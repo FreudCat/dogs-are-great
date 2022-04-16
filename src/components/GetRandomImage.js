@@ -132,7 +132,7 @@ const GetRandomImage = (props) => {
           </p>
         </div>
         <img
-          className="w-100 mb-xxl-5 mb-2 h-auto"
+          className="main-image mb-xxl-5 mb-2 h-auto"
           src={canineImage}
           alt={altMessage}
           onLoad={() => {
