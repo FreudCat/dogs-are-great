@@ -10,7 +10,9 @@
 
 ## Overview
 
-This project was initiated with [Create React App](https://github.com/facebook/create-react-app) and utilizes two separate API calls to grab images and characteristics of dogs based on user selection. In addition to React, I use ESlint and Prettier for code pattern formatting and SCSS for CSS preprocessing. This is still a work in progress 🚧 - see my to do list below for upcoming additions.
+This project was initiated with [Create React App](https://github.com/facebook/create-react-app) and utilizes two separate API calls to grab images and characteristics of dogs based on user selection. In addition to React, I use ESlint and Prettier for code pattern formatting and SCSS for CSS preprocessing. This is still a work in progress 🚧.
+
+Demo it [here](https://falloutskyrimdogs.netlify.app).
 
 <br/>
 
@@ -53,10 +55,3 @@ REACT_APP_CANINE_API_KEY = Your API key here
 - React Hooks
 
 <br/>
-
-## To-do
-
-[x] Add abstract <br/>
-[ ] Create JSON containing canine info for own API call <br/>
-[ ] Create API call for public JSON <br/>
-[ ] Render API data into app <br/>
