@@ -10,8 +10,8 @@ const RenderMyApi = (props) => {
     try {
       const res = await fetch("data.json");
       const myAPI = await res.json();
-      console.log(myAPI.dogs[0].breed);
-      console.log({ canineForOwnApi });
+      console.log(myAPI[canineForOwnApi]);
+      console.log(typeof canineForOwnApi);
     } catch (err) {
       console.log(err);
     }

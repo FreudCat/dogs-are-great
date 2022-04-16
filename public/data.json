@@ -1,7 +1,6 @@
 {
-  "dogs": [
+  "IrishWolfhound": 
     {
-      "breed": "woldhound",
       "game": "Skyrim",
       "specific_dog": [
         {
@@ -27,8 +26,8 @@
       ],
       "url": "https://static.wikia.nocookie.net/elderscrolls/images/4/42/Meeko.jpg/revision/latest/scale-to-width-down/696?cb=20120207195605"
     },
+    "Shepherd":
     {
-      "breed": "shepherd",
       "game": "Fallout 4",
       "specific_dog": [
         {
@@ -39,8 +38,8 @@
       ],
       "url": "https://static.wikia.nocookie.net/fallout/images/2/26/FO4_Dogmeat_Infobox.png/revision/latest?cb=20210508063802"
     },
+    "Cattledog":
     {
-      "breed": "cattledog",
       "game": "Fallout 3",
       "specific_dog": [
         {
@@ -51,8 +50,8 @@
       ],
       "url": "https://static.wikia.nocookie.net/fallout/images/1/1e/Dogmeat_FO3.jpg/revision/latest/scale-to-width-down/1000?cb=20190829143502"
     },
+    "Rottweiler":
     {
-      "breed": "rottweiler",
       "game": "Fallout 4",
       "specific_dog": [
         {
@@ -73,8 +72,8 @@
       ],
       "url": "https://fallout.fandom.com/wiki/Kate_(dog)?file=Kate_dog.png"
     },
+    "Husky":
     {
-      "breed": "husky",
       "game": "Skyrim",
       "specific_dog": [
         {
@@ -90,5 +89,4 @@
       ],
       "url": "https://static.wikia.nocookie.net/elderscrolls/images/4/42/Meeko.jpg/revision/latest/scale-to-width-down/696?cb=20120207195605"
     }
-  ]
 }
