@@ -46,23 +46,15 @@
 
 .button-in-image {
   position: absolute;
-  bottom: 10px;
-  right: 2px; }
+  right: 0%;
+  bottom: 0%; }
   .button-in-image:before {
     content: "";
     display: block;
     height: 50%; }
-  @media (min-width: 1400px) {
+  @media (min-width: 1200px) {
     .button-in-image {
-      right: 115px; } }
-  @media (min-width: 1900px) {
-    .button-in-image {
-      right: 170px;
-      bottom: 50px; } }
-  @media (min-width: 2500px) {
-    .button-in-image {
-      right: 230px;
-      bottom: 50px; } }
+      right: 12.5%; } }
   .button-in-image .btn.get-random-button {
     border: 1px solid #ffffff;
     font-size: 2.5vw;

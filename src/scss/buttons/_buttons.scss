@@ -20,23 +20,15 @@
 }
 .button-in-image {
   position: absolute; 
-  bottom: 10px; 
-  right: 2px;
+  right: 0%;
+  bottom: 0%;
     &:before {
       content: ""; 
       display: block;
       height: 50%;
     }
-    @include media-breakpoint-up(xl) {
-      right: 115px;
-    }
-    @include media-breakpoint-up(xxl) {
-      right: 170px;
-      bottom: 50px;
-    }
-    @include media-breakpoint-up(supersize) {
-      right: 230px;
-      bottom: 50px;
+    @include media-breakpoint-up(lgxl) {
+      right: 12.5%;
     }
   .btn.get-random-button {
     border: 1px solid #ffffff;
