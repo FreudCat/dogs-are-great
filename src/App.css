@@ -4,7 +4,14 @@
   background-image: url("./images/pattern-bg.png");
   height: 300px;
   background-size: cover;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  box-shadow: 0px 10px 13px -7px #000000; }
+  @media (min-width: 768px) {
+    .App-header {
+      height: 350px; } }
+  @media (min-width: 2500px) {
+    .App-header {
+      height: 700px; } }
   .App-header h1, .App-header .h1 {
     font-size: 7vw;
     color: white; }
@@ -111,9 +118,11 @@
   color: #ffffff; }
   @media (min-width: 768px) {
     .canine-form {
+      top: 100px;
       font-size: 3.5vw; } }
   @media (min-width: 1024px) {
     .canine-form {
+      top: 120px;
       font-size: 3vw; } }
   @media (min-width: 1200px) {
     .canine-form {
@@ -121,6 +130,9 @@
   @media (min-width: 1400px) {
     .canine-form {
       font-size: 2vw; } }
+  @media (min-width: 2500px) {
+    .canine-form {
+      top: 200px; } }
   .canine-form .dropdown-form {
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
@@ -163,21 +175,9 @@
 .canine-card-row {
   position: relative;
   top: -100px; }
-  @media (min-width: 768px) {
-    .canine-card-row {
-      top: -12em; } }
-  @media (min-width: 1024px) {
-    .canine-card-row {
-      top: -8em; } }
-  @media (min-width: 1200px) {
-    .canine-card-row {
-      top: -5em; } }
-  @media (min-width: 1900px) {
-    .canine-card-row {
-      top: -10em; } }
   @media (min-width: 2500px) {
     .canine-card-row {
-      top: -20em; } }
+      top: -200px; } }
   .canine-card-row .canine-card {
     border: none;
     border-radius: 10px;
