@@ -10,7 +10,7 @@
 
 ## Overview
 
-This project was initiated with [Create React App](https://github.com/facebook/create-react-app) and utilizes two separate API calls to grab images and characteristics of dogs based on user selection. In addition to React, I use ESlint and Prettier for code pattern formatting and SCSS for CSS preprocessing. This is still a work in progress 🚧.
+This project was initiated with [Create React App](https://github.com/facebook/create-react-app) and utilizes two separate API calls to grab images and characteristics of dog breeds based on the user's selection. For each selection, the user will learn a little bit about the breed and see information about the Skyrim or Fallout versions. In addition to React, I use ESlint and Prettier for code pattern formatting and SCSS for CSS preprocessing. This is still a work in progress 🚧.
 
 Demo it [here](https://falloutskyrimdogs.netlify.app).
 
