@@ -267,7 +267,9 @@
 
 @keyframes bounce {
   0% {
-    top: 40px;
+    top: 30px;
+    @media (min-width: 768px) {
+      top: 40px; }
     @media (min-width: 768px) {
       top: 70px; }
     height: 5px;
