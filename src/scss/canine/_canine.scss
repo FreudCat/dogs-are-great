@@ -113,7 +113,10 @@
   
   @keyframes bounce {
     0% {
-      top: 40px;
+      top: 30px;
+      @include media-breakpoint-up(md) {
+        top: 40px;
+      }
       @include media-breakpoint-up(md) {
         top: 70px;
       }
