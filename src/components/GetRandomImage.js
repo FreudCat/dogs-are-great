@@ -128,7 +128,7 @@ const GetRandomImage = (props) => {
               !loading ? "make-invisible" : ""
             }`}
           >
-            Loading...
+            Fetching...
           </p>
         </div>
         <img
@@ -148,7 +148,7 @@ const GetRandomImage = (props) => {
             color="primary"
             onClick={getRandomImage}
           >
-            Get new image
+            See new dog
           </Button>
         </div>
       </div>

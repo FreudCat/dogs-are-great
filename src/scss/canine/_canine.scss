@@ -98,7 +98,7 @@
       width: 15px;
       height: 15px;
       border-radius: 50%;
-      background-color: black;
+      background-color: rgb(0, 255, 4);
       transform-origin: 50%;
       animation: bounce 500ms alternate infinite ease;
       @include media-breakpoint-up(md) {

@@ -254,7 +254,7 @@
       width: 15px;
       height: 15px;
       border-radius: 50%;
-      background-color: black;
+      background-color: #00ff04;
       transform-origin: 50%;
       animation: bounce 500ms alternate infinite ease; }
       @media (min-width: 768px) {

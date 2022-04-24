@@ -7,7 +7,7 @@ const PreloaderAnimation = (props) => {
   const { loading } = props;
   return (
     <div className={`${loading ? "preloader" : ""}`}>
-      <p className="bounceball preloader-text">Loading...</p>
+      <p className="bounceball preloader-text">Fetching...</p>
     </div>
   );
 };
